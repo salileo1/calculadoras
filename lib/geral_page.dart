@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:teste_calculadora/pages/calc_adubo.dart';
 import 'sobre_page.dart';
 import 'contato_page.dart';
 import 'pages/calc_semente.dart';
@@ -90,7 +91,10 @@ class GeralPage extends StatelessWidget {
                         SizedBox(width: 30),
                         ElevatedButton(
                           onPressed: () {
-                            // Ação do botão "Adubo"
+                            Navigator.push(
+                              context,
+                              MaterialPageRoute(builder: (context) => CalcAduboPage()),
+                            );
                           },
                           style: ElevatedButton.styleFrom(
                             backgroundColor: Colors.green,

@@ -34,7 +34,8 @@ class _calc_semente5State extends State<calc_semente5> {
     double calculo3 = 100 + (100 - potencial);
     double calculo4 = (calculo2 * calculo3) / 100; 
     double calculo5 = (calculo4 * peso) / 1000;
-    double calculo6 = plantas + (plantas / 20 );
+    double calculo6 = plantas + (plantas / 20 
+    );
     double calculo7 = calculo5 * calculo1 /1000;
 
     setState(() {
@@ -112,7 +113,7 @@ class _calc_semente5State extends State<calc_semente5> {
                     _calcular();
                     Navigator.push(
                       context,
-                      MaterialPageRoute(builder: (context) => resultado(result: "Gramas/metro: $_result", texto: "Sementes/metro: $resposta2 \n Sementes/Ha: $resposta3 \n Kg/Ha: $resposta4")),
+                      MaterialPageRoute(builder: (context) => resultado(titulo: "Sementes", result: "Gramas/metro: $_result", texto: "Sementes/metro: $resposta2 \n Sementes/Ha: $resposta3 \n Kg/Ha: $resposta4")),
                     );
                   },
                 

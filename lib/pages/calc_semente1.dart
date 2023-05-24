@@ -26,9 +26,10 @@ class _calc_semente1State extends State<calc_semente1> {
     double calculo2 = graosPorMetro * calculo1;
     double calculo3 = 100 - potencial;
     double calculo4 = (calculo2 * calculo3 / 100);
+    double calculo5 = calculo2 + calculo4;
 
     setState(() {
-      _result = calculo2 + calculo4;
+      _result = double.parse(calculo5.toStringAsFixed(1));
     });
   }
 
@@ -85,7 +86,7 @@ class _calc_semente1State extends State<calc_semente1> {
                     _calcular();
                     Navigator.push(
                       context,
-                      MaterialPageRoute(builder: (context) => resultado(result: "$_result", texto: "em metros")),
+                      MaterialPageRoute(builder: (context) => resultado(titulo: "Sementes", result: "$_result", texto: "em metros")),
                     );
                   },
                 

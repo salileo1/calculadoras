@@ -3,7 +3,9 @@ import 'package:teste_calculadora/pages/calc_semente1.dart';
 import 'package:teste_calculadora/pages/calc_semente2.dart';
 import 'package:teste_calculadora/pages/calc_semente3.dart';
 import 'package:teste_calculadora/pages/calc_semente5.dart';
-import 'package:teste_calculadora/pages/calc_sementes4.dart';
+import 'package:teste_calculadora/pages/calc_semente4.dart';
+import 'package:teste_calculadora/pages/calc_semente6.dart';
+import 'package:teste_calculadora/pages/calc_semente7.dart';
 import '../geral_page.dart';
 import '../sobre_page.dart';
 import '../contato_page.dart';
@@ -569,7 +571,10 @@ class _calcSementeState extends State<CalcSementePage> {
                 ),
                 child: ElevatedButton(
                   onPressed: () {
-                    
+                    Navigator.push(
+                            context,
+                            MaterialPageRoute(builder: (context) => calc_semente6()),
+                      );
                   },
                   style: ButtonStyle(
                     backgroundColor: MaterialStateProperty.all(Colors.transparent),
@@ -594,7 +599,10 @@ class _calcSementeState extends State<CalcSementePage> {
                 ),
                 child: ElevatedButton(
                   onPressed: () {
-                    
+                    Navigator.push(
+                            context,
+                            MaterialPageRoute(builder: (context) => calc_semente7()),
+                      );
                   },
                   style: ButtonStyle(
                     backgroundColor: MaterialStateProperty.all(Colors.transparent),

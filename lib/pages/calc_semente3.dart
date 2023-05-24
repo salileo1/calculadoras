@@ -97,7 +97,7 @@ class _calc_semente3State extends State<calc_semente3> {
                     _calcular();
                     Navigator.push(
                       context,
-                      MaterialPageRoute(builder: (context) => resultado(result: "$_result", texto: "em \n$distancia metros")),
+                      MaterialPageRoute(builder: (context) => resultado(titulo: "Sementes", result: "$_result", texto: "em \n$distancia metros")),
                     );
                   },
                 

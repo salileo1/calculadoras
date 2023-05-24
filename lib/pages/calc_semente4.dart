@@ -2,28 +2,41 @@ import 'dart:ffi';
 import 'package:flutter/material.dart';
 import 'resultado.dart';
 
-class calc_semente2 extends StatefulWidget {
-  @override
-  _calc_semente1State createState() => _calc_semente1State();
+void main() {
+  runApp(calc_semente4());
 }
 
-class _calc_semente1State extends State<calc_semente2> {
+class calc_semente4 extends StatefulWidget {
+  @override
+  _calc_semente4State createState() => _calc_semente4State();
+}
+
+class _calc_semente4State extends State<calc_semente4> {
   TextEditingController _seedsController = TextEditingController();
   TextEditingController _lengthController = TextEditingController();
   TextEditingController _widthController = TextEditingController();
+  TextEditingController _newController = TextEditingController();
   double _result = 0.0;
+  double resposta2 = 0;
+  double resposta3 = 0;
 
   void _calcular() {
-    double populacao = double.tryParse(_seedsController.text) ?? 0.0;
-    double potencial = double.tryParse(_lengthController.text) ?? 0.0;
+    int graos = int.tryParse(_seedsController.text) ?? 0;
+    int peso = int.tryParse(_lengthController.text) ?? 0;
     int espacamento = int.tryParse(_widthController.text) ?? 0;
+    double potencial = double.tryParse(_newController.text) ?? 0.0;
     
-    double calculo1 = 10000 / (espacamento / 100);
-    double calculo2 = (populacao * 100) / potencial;
-    double calculo3 = calculo2 / calculo1;
+    double calculo1 = 100 - potencial;
+    double calculo2 = 10000 / (espacamento / 100);
+    double calculo3 = graos + (graos * calculo1)/ 100;
+    double calculo4 = calculo3 * calculo2;
+    double calculo5 = (calculo4 * 1000) / peso;
+    double calculo6 = calculo5 / 10000;
 
     setState(() {
-      _result = double.parse(calculo3.toStringAsFixed(1));
+      _result = double.parse(calculo4.toStringAsFixed(1));
+      resposta2 = double.parse(calculo5.toStringAsFixed(1));
+      resposta3 = double.parse(calculo6.toStringAsFixed(1));
     });
   }
 
@@ -57,21 +70,28 @@ class _calc_semente1State extends State<calc_semente2> {
                 controller: _seedsController,
                 keyboardType: TextInputType.number,
                 decoration: InputDecoration(
-                  labelText: 'População',
+                  labelText: 'Grãos por metro',
                 ),
               ),
               TextField(
                 controller: _lengthController,
                 keyboardType: TextInputType.number,
                 decoration: InputDecoration(
-                  labelText: 'Potencial germinativo',
+                  labelText: 'Peso 100 Grãos (Gramas)',
                 ),
               ),
               TextField(
                 controller: _widthController,
                 keyboardType: TextInputType.number,
                 decoration: InputDecoration(
-                  labelText: 'Espacamento',
+                  labelText: 'Espacamento (Centimetros)',
+                ),
+              ),
+              TextField(
+                controller: _newController,
+                keyboardType: TextInputType.number,
+                decoration: InputDecoration(
+                  labelText: 'Potencial Germinativo',
                 ),
               ),
               SizedBox(height: 16.0),
@@ -80,16 +100,11 @@ class _calc_semente1State extends State<calc_semente2> {
                     _calcular();
                     Navigator.push(
                       context,
-                      MaterialPageRoute(builder: (context) => resultado(titulo: "Sementes", result: "$_result", texto: "em metros")),
+                      MaterialPageRoute(builder: (context) => resultado(titulo: "Sementes", result: "Kg/Ha: $_result", texto: "Plantas/Ha: $resposta2 \n Plantas/m²: $resposta3")),
                     );
                   },
                 
                 child: Text('Calcular'),
-              ),
-              SizedBox(height: 16.0),
-              Text(
-                'Contagem de sementes por metro: $_result',
-                style: TextStyle(fontSize: 18.0),
               ),
             ],
           ),

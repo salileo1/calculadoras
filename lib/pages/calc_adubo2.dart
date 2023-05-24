@@ -2,28 +2,33 @@ import 'dart:ffi';
 import 'package:flutter/material.dart';
 import 'resultado.dart';
 
-class calc_semente2 extends StatefulWidget {
-  @override
-  _calc_semente1State createState() => _calc_semente1State();
+void main() {
+  runApp(calc_adubo2());
 }
 
-class _calc_semente1State extends State<calc_semente2> {
+class calc_adubo2 extends StatefulWidget {
+  @override
+  _calc_adubo2State createState() => _calc_adubo2State();
+}
+
+class _calc_adubo2State extends State<calc_adubo2> {
   TextEditingController _seedsController = TextEditingController();
   TextEditingController _lengthController = TextEditingController();
   TextEditingController _widthController = TextEditingController();
-  double _result = 0.0;
+  int _result = 0;
 
   void _calcular() {
-    double populacao = double.tryParse(_seedsController.text) ?? 0.0;
-    double potencial = double.tryParse(_lengthController.text) ?? 0.0;
-    int espacamento = int.tryParse(_widthController.text) ?? 0;
+    int coleta = int.tryParse(_seedsController.text) ?? 0;
+    int espacamento = int.tryParse(_lengthController.text) ?? 0;
+    int distancia = int.tryParse(_widthController.text) ?? 0;
     
     double calculo1 = 10000 / (espacamento / 100);
-    double calculo2 = (populacao * 100) / potencial;
-    double calculo3 = calculo2 / calculo1;
+    double calculo2 = coleta * calculo1;
+    double calculo3 = calculo2 / distancia;
+    double calculo4 = calculo3 / 1000;
 
     setState(() {
-      _result = double.parse(calculo3.toStringAsFixed(1));
+      _result = calculo4.toInt();
     });
   }
 
@@ -41,7 +46,7 @@ class _calc_semente1State extends State<calc_semente2> {
         ),
         elevation: 0,
         title: Text(
-          'Sementes',
+          'Adubo',
           style: TextStyle(
             fontSize: 28,
             color: Color.fromARGB(255, 0, 0, 0),
@@ -57,21 +62,21 @@ class _calc_semente1State extends State<calc_semente2> {
                 controller: _seedsController,
                 keyboardType: TextInputType.number,
                 decoration: InputDecoration(
-                  labelText: 'População',
+                  labelText: 'Coleta (gramas)',
                 ),
               ),
               TextField(
                 controller: _lengthController,
                 keyboardType: TextInputType.number,
                 decoration: InputDecoration(
-                  labelText: 'Potencial germinativo',
+                  labelText: 'Espaçamento',
                 ),
               ),
               TextField(
                 controller: _widthController,
                 keyboardType: TextInputType.number,
                 decoration: InputDecoration(
-                  labelText: 'Espacamento',
+                  labelText: 'Distância',
                 ),
               ),
               SizedBox(height: 16.0),
@@ -80,7 +85,7 @@ class _calc_semente1State extends State<calc_semente2> {
                     _calcular();
                     Navigator.push(
                       context,
-                      MaterialPageRoute(builder: (context) => resultado(titulo: "Sementes", result: "$_result", texto: "em metros")),
+                      MaterialPageRoute(builder: (context) => resultado(titulo: "Adubo", result: "$_result", texto: "gramas")),
                     );
                   },
                 

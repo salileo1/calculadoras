@@ -2,28 +2,37 @@ import 'dart:ffi';
 import 'package:flutter/material.dart';
 import 'resultado.dart';
 
-class calc_semente2 extends StatefulWidget {
-  @override
-  _calc_semente1State createState() => _calc_semente1State();
+void main() {
+  runApp(calc_semente7());
 }
 
-class _calc_semente1State extends State<calc_semente2> {
+class calc_semente7 extends StatefulWidget {
+  @override
+  _calc_semente7State createState() => _calc_semente7State();
+}
+
+class _calc_semente7State extends State<calc_semente7> {
   TextEditingController _seedsController = TextEditingController();
   TextEditingController _lengthController = TextEditingController();
   TextEditingController _widthController = TextEditingController();
+  TextEditingController _lastController = TextEditingController();
   double _result = 0.0;
 
+
   void _calcular() {
-    double populacao = double.tryParse(_seedsController.text) ?? 0.0;
-    double potencial = double.tryParse(_lengthController.text) ?? 0.0;
+    int gramas = int.tryParse(_seedsController.text) ?? 0;
+    int peso = int.tryParse(_lengthController.text) ?? 0;
     int espacamento = int.tryParse(_widthController.text) ?? 0;
+    double potencial = double.tryParse(_lastController.text) ?? 0.0;
     
     double calculo1 = 10000 / (espacamento / 100);
-    double calculo2 = (populacao * 100) / potencial;
-    double calculo3 = calculo2 / calculo1;
+    double calculo2 = 100 - potencial;
+    double calculo3 = gramas + (gramas * calculo2) / 100;
+    double calculo4 = calculo3 * calculo1 / 1000; 
+    
 
     setState(() {
-      _result = double.parse(calculo3.toStringAsFixed(1));
+      _result = double.parse(calculo4.toStringAsFixed(3));
     });
   }
 
@@ -57,21 +66,28 @@ class _calc_semente1State extends State<calc_semente2> {
                 controller: _seedsController,
                 keyboardType: TextInputType.number,
                 decoration: InputDecoration(
-                  labelText: 'População',
+                  labelText: 'Grãos por m²',
                 ),
               ),
               TextField(
                 controller: _lengthController,
                 keyboardType: TextInputType.number,
                 decoration: InputDecoration(
-                  labelText: 'Potencial germinativo',
+                  labelText: 'Peso 100 Grãos (Gramas)',
                 ),
               ),
               TextField(
                 controller: _widthController,
                 keyboardType: TextInputType.number,
                 decoration: InputDecoration(
-                  labelText: 'Espacamento',
+                  labelText: 'Espacamento (Centimetros)',
+                ),
+              ),
+              TextField(
+                controller: _lastController,
+                keyboardType: TextInputType.number,
+                decoration: InputDecoration(
+                  labelText: 'Potencial Germinativo',
                 ),
               ),
               SizedBox(height: 16.0),
@@ -80,16 +96,11 @@ class _calc_semente1State extends State<calc_semente2> {
                     _calcular();
                     Navigator.push(
                       context,
-                      MaterialPageRoute(builder: (context) => resultado(titulo: "Sementes", result: "$_result", texto: "em metros")),
+                      MaterialPageRoute(builder: (context) => resultado(titulo: "Sementes", texto: "", result: "Kg/Ha: $_result" )),
                     );
                   },
                 
                 child: Text('Calcular'),
-              ),
-              SizedBox(height: 16.0),
-              Text(
-                'Contagem de sementes por metro: $_result',
-                style: TextStyle(fontSize: 18.0),
               ),
             ],
           ),
