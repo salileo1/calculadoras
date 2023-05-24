@@ -14,7 +14,7 @@ class GeralPage extends StatelessWidget {
           children: [
             Container(
               width: 800,
-              height: 315,
+              height: 400,
               decoration: BoxDecoration(
                 color: Color(0xFF09C10E),
               ),
