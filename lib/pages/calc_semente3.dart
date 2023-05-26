@@ -24,7 +24,7 @@ class _calc_semente3State extends State<calc_semente3> {
     double potencial = double.tryParse(_lengthController.text) ?? 0.0;
     int espacamento = int.tryParse(_widthController.text) ?? 0;
     int metros = int.tryParse(_newController.text) ?? 0;
-    
+
     double calculo1 = 100 - potencial;
     double calculo2 = 10000 / (espacamento / 100);
     double calculo3 = kg_hectare * 1000;
@@ -42,67 +42,117 @@ class _calc_semente3State extends State<calc_semente3> {
     return MaterialApp(
       home: Scaffold(
         appBar: AppBar(
-        toolbarHeight: 80,
-        backgroundColor: const Color.fromARGB(255, 255, 255, 255),
-        centerTitle: true,
-        iconTheme: IconThemeData(
-          color: Colors.black,
-          size: 32,
-        ),
-        elevation: 0,
-        title: Text(
-          'Sementes',
-          style: TextStyle(
-            fontSize: 28,
-            color: Color.fromARGB(255, 0, 0, 0),
+          toolbarHeight: 80,
+          backgroundColor: const Color.fromARGB(255, 255, 255, 255),
+          centerTitle: false,
+          iconTheme: IconThemeData(
+            //BOTAO RETROCEDER
+            color: Colors.green,
+            size: 35,
           ),
+          elevation: 0,
+          title: Text(
+            'Semente',
+            style: TextStyle(
+              fontSize: 28,
+              color: Colors.black54,
+              fontWeight: FontWeight.bold,
+            ),
+          ),
+          //Imagem do canto superior esquerdo
+          actions: [
+            Container(
+              width: 50,
+              child: Image.network(
+                  'https://logowik.com/content/uploads/images/flutter5786.jpg'),
+            )
+          ],
         ),
-      ),
         body: Padding(
           padding: EdgeInsets.all(16.0),
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.stretch,
             children: [
-              TextField(
-                controller: _seedsController,
-                keyboardType: TextInputType.number,
-                decoration: InputDecoration(
-                  labelText: 'Kg/Hectare',
-                ),
+              Padding(
+                padding: EdgeInsets.all(15), //apply padding to all four sides
+                child: Text("Kg/Hectare"),
               ),
               TextField(
-                controller: _lengthController,
-                keyboardType: TextInputType.number,
-                decoration: InputDecoration(
-                  labelText: 'Potencial germinativo',
-                ),
+                  controller: _seedsController,
+                  keyboardType: TextInputType.number,
+                  decoration: InputDecoration(
+                      filled: true,
+                      fillColor: Colors.black12,
+                      border: OutlineInputBorder(
+                          borderSide: BorderSide.none,
+                          borderRadius: BorderRadius.circular(20)))),
+              Padding(
+                padding: EdgeInsets.all(15), //apply padding to all four sides
+                child: Text("Potencial germinativo"),
               ),
               TextField(
-                controller: _widthController,
-                keyboardType: TextInputType.number,
-                decoration: InputDecoration(
-                  labelText: 'Espacamento (Centimetros)',
-                ),
+                  controller: _lengthController,
+                  keyboardType: TextInputType.number,
+                  decoration: InputDecoration(
+                      filled: true,
+                      fillColor: Colors.black12,
+                      border: OutlineInputBorder(
+                          borderSide: BorderSide.none,
+                          borderRadius: BorderRadius.circular(20)))),
+              Padding(
+                padding: EdgeInsets.all(15), //apply padding to all four sides
+                child: Text("Espacamento (Centimetros)"),
+              ),
+              TextField(
+                  controller: _widthController,
+                  keyboardType: TextInputType.number,
+                  decoration: InputDecoration(
+                      filled: true,
+                      fillColor: Colors.black12,
+                      border: OutlineInputBorder(
+                          borderSide: BorderSide.none,
+                          borderRadius: BorderRadius.circular(20)))),
+              Padding(
+                padding: EdgeInsets.all(15), //apply padding to all four sides
+                child: Text("Distância (metros)"),
               ),
               TextField(
                 controller: _newController,
                 keyboardType: TextInputType.number,
                 decoration: InputDecoration(
-                  labelText: 'Distância (metros)',
-                ),
+                    filled: true,
+                    fillColor: Colors.black12,
+                    border: OutlineInputBorder(
+                        borderSide: BorderSide.none,
+                        borderRadius: BorderRadius.circular(20))),
               ),
               SizedBox(height: 16.0),
               ElevatedButton(
-                onPressed: () {
+                  onPressed: () {
                     _calcular();
                     Navigator.push(
                       context,
-                      MaterialPageRoute(builder: (context) => resultado(titulo: "Sementes", result: "$_result", texto: "em \n$distancia metros")),
+                      MaterialPageRoute(
+                          builder: (context) => resultado(
+                              titulo: "Sementes",
+                              result: "$_result",
+                              texto: "em \n$distancia metros")),
                     );
                   },
-                
-                child: Text('Calcular'),
-              ),
+                  child: Text('Calcular',
+                      style: TextStyle(
+                        color: Colors.white,
+                        fontSize: 15,
+                      )),
+                  style: ElevatedButton.styleFrom(
+                      shadowColor: Colors.black,
+                      elevation: 10.0,
+                      backgroundColor: Colors.orange,
+                      padding: EdgeInsets.symmetric(
+                          horizontal: 20.0, vertical: 20.0),
+                      shape: RoundedRectangleBorder(
+                        borderRadius: BorderRadius.circular(20),
+                      ))),
             ],
           ),
         ),

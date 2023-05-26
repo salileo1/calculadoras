@@ -47,7 +47,7 @@ class _calc_semente4State extends State<calc_semente4> {
         appBar: AppBar(
         toolbarHeight: 80,
         backgroundColor: const Color.fromARGB(255, 255, 255, 255),
-        centerTitle: true,
+        centerTitle: false,
         iconTheme: IconThemeData(
           color: Colors.black,
           size: 32,
@@ -60,6 +60,13 @@ class _calc_semente4State extends State<calc_semente4> {
             color: Color.fromARGB(255, 0, 0, 0),
           ),
         ),
+        actions: [
+            Container(
+              width: 50,
+              child: Image.network(
+                  'https://logowik.com/content/uploads/images/flutter5786.jpg'),
+            )
+          ],
       ),
         body: Padding(
           padding: EdgeInsets.all(16.0),
