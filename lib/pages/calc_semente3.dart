@@ -51,13 +51,19 @@ class _calc_semente3State extends State<calc_semente3> {
             size: 35,
           ),
           elevation: 0,
-          title: Text(
+           title: Text(
             'Semente',
             style: TextStyle(
               fontSize: 28,
               color: Colors.black54,
               fontWeight: FontWeight.bold,
             ),
+          ),
+          leading: IconButton(
+            icon: Icon(Icons.arrow_back),
+            onPressed: () {
+              Navigator.pop(context);
+            },
           ),
           //Imagem do canto superior esquerdo
           actions: [

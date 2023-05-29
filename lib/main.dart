@@ -46,10 +46,13 @@ class _HomePageState extends State<HomePage> {
     return Scaffold(
       body: _widgetOptions.elementAt(_selectedIndex),
       bottomNavigationBar: BottomNavigationBar(
+        fixedColor: Colors.green,
         items: const <BottomNavigationBarItem>[
           BottomNavigationBarItem(
+            
             icon: Icon(Icons.home),
             label: 'Geral',
+           
           ),
           BottomNavigationBarItem(
             icon: Icon(Icons.info),
@@ -58,6 +61,7 @@ class _HomePageState extends State<HomePage> {
           BottomNavigationBarItem(
             icon: Icon(Icons.mail),
             label: 'Contato',
+
           ),
         ],
         currentIndex: _selectedIndex,

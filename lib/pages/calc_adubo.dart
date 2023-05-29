@@ -9,13 +9,12 @@ void main() {
 class CalcAduboPage extends StatefulWidget {
   @override
   _calcAduboPageState createState() => _calcAduboPageState();
-  
 }
 
 class _calcAduboPageState extends State<CalcAduboPage> {
-    bool showAdditionalButtonFinal1 = false;
-    bool showAdditionalButtonFinal2 = false;
-    
+  bool showAdditionalButtonFinal1 = false;
+  bool showAdditionalButtonFinal2 = false;
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -23,9 +22,9 @@ class _calcAduboPageState extends State<CalcAduboPage> {
       appBar: AppBar(
         toolbarHeight: 80,
         backgroundColor: const Color.fromARGB(255, 255, 255, 255),
-        centerTitle: true,
-        iconTheme: IconThemeData(
-          color: Colors.black,
+        centerTitle: false,
+       iconTheme: IconThemeData(
+          color: Colors.green,
           size: 32,
         ),
         elevation: 0,
@@ -33,29 +32,36 @@ class _calcAduboPageState extends State<CalcAduboPage> {
           'Adubo',
           style: TextStyle(
             fontSize: 28,
-            color: Color.fromARGB(255, 0, 0, 0),
+            color: Colors.black54,
           ),
         ),
+        actions: [
+            Container(
+              width: 50,
+              child: Image.network(
+                  'https://logowik.com/content/uploads/images/flutter5786.jpg'),
+            )
+          ],
       ),
       body: Container(
         alignment: Alignment.topCenter,
         padding: EdgeInsets.symmetric(horizontal: 16),
         child: Column(
-          crossAxisAlignment: CrossAxisAlignment.center,
+          crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             SizedBox(height: 16),
             Text(
               'Escolha o tipo de Adubo:',
-              style: TextStyle(fontSize: 20),
+              style: TextStyle(fontSize: 25),
             ),
             SizedBox(height: 16),
             Container(
               width: double.infinity,
               decoration: BoxDecoration(
-                color: showAdditionalButtonFinal1 ? Colors.green : Colors.white,
-                border: Border.all(color: Colors.green),
-                borderRadius: BorderRadius.circular(10),
-              ),
+                  color:
+                      showAdditionalButtonFinal1 ? Colors.green : Colors.white,
+                  border: Border.all(color: Colors.green),
+                  borderRadius: BorderRadius.circular(10)),
               child: ElevatedButton(
                 onPressed: () {
                   setState(() {
@@ -67,9 +73,13 @@ class _calcAduboPageState extends State<CalcAduboPage> {
                   backgroundColor: MaterialStateProperty.resolveWith<Color>(
                     (Set<MaterialState> states) {
                       if (states.contains(MaterialState.pressed)) {
-                        return Colors.green.withOpacity(0); // Define a cor quando pressionado
+                        return Colors.green
+                            .withOpacity(0); // Define a cor quando pressionado
                       }
-                      return showAdditionalButtonFinal1 ? Colors.green : Colors.white; // Cor com base no estado de showAdditionalButtonFinal1
+                      return showAdditionalButtonFinal1
+                          ? Colors.green
+                          : Colors
+                              .white; // Cor com base no estado de showAdditionalButtonFinal1
                     },
                   ),
                   elevation: MaterialStateProperty.all(0),
@@ -77,11 +87,13 @@ class _calcAduboPageState extends State<CalcAduboPage> {
                 child: Text(
                   'Gramas a coletar',
                   style: TextStyle(
-                    color: showAdditionalButtonFinal1 ? Colors.white : Colors.green,
+                    color: showAdditionalButtonFinal1
+                        ? Colors.white
+                        : Colors.green,
                     fontSize: 25,
                   ),
                 ),
-              ), 
+              ),
             ),
             SizedBox(height: 16),
             Container(
@@ -93,7 +105,7 @@ class _calcAduboPageState extends State<CalcAduboPage> {
               ),
               child: ElevatedButton(
                 onPressed: () {
-                   setState(() {
+                  setState(() {
                     showAdditionalButtonFinal1 = false;
                     showAdditionalButtonFinal2 = true;
                   });
@@ -102,9 +114,13 @@ class _calcAduboPageState extends State<CalcAduboPage> {
                   backgroundColor: MaterialStateProperty.resolveWith<Color>(
                     (Set<MaterialState> states) {
                       if (states.contains(MaterialState.pressed)) {
-                        return Colors.green.withOpacity(0); // Define a cor quando pressionado
+                        return Colors.green
+                            .withOpacity(0); // Define a cor quando pressionado
                       }
-                      return showAdditionalButtonFinal2 ? Colors.green : Colors.white; // Cor com base no estado de showAdditionalButtonFinal1
+                      return showAdditionalButtonFinal2
+                          ? Colors.green
+                          : Colors
+                              .white; // Cor com base no estado de showAdditionalButtonFinal1
                     },
                   ),
                   elevation: MaterialStateProperty.all(0),
@@ -112,14 +128,16 @@ class _calcAduboPageState extends State<CalcAduboPage> {
                 child: Text(
                   'Kg/Ha',
                   style: TextStyle(
-                    color: showAdditionalButtonFinal2 ? Colors.white : Colors.green,
+                    color: showAdditionalButtonFinal2
+                        ? Colors.white
+                        : Colors.green,
                     fontSize: 25,
                   ),
                 ),
               ),
             ),
-          if(showAdditionalButtonFinal1) ...[
-            SizedBox(height: 16),
+            if (showAdditionalButtonFinal1) ...[
+              SizedBox(height: 16),
               Container(
                 width: double.infinity,
                 decoration: BoxDecoration(
@@ -129,13 +147,14 @@ class _calcAduboPageState extends State<CalcAduboPage> {
                 ),
                 child: ElevatedButton(
                   onPressed: () {
-                      Navigator.push(
-                              context,
-                              MaterialPageRoute(builder: (context) => calc_adubo1()),
-                        );
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(builder: (context) => calc_adubo1()),
+                    );
                   },
                   style: ButtonStyle(
-                    backgroundColor: MaterialStateProperty.all(Colors.transparent),
+                    backgroundColor:
+                        MaterialStateProperty.all(Colors.transparent),
                     elevation: MaterialStateProperty.all(0),
                   ),
                   child: Text(
@@ -147,23 +166,25 @@ class _calcAduboPageState extends State<CalcAduboPage> {
                 ),
               ),
             ],
-          if(showAdditionalButtonFinal2) ...[
-            SizedBox(height: 16),
+            if (showAdditionalButtonFinal2) ...[
+              SizedBox(height: 16),
               Container(
                 width: double.infinity,
                 decoration: BoxDecoration(
                   color: Colors.orange,
                   border: Border.all(color: Colors.orange),
+                  borderRadius: BorderRadius.circular(10),
                 ),
                 child: ElevatedButton(
                   onPressed: () {
-                      Navigator.push(
-                              context,
-                              MaterialPageRoute(builder: (context) => calc_adubo2()),
-                        );
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(builder: (context) => calc_adubo2()),
+                    );
                   },
                   style: ButtonStyle(
-                    backgroundColor: MaterialStateProperty.all(Colors.transparent),
+                    backgroundColor:
+                        MaterialStateProperty.all(Colors.transparent),
                     elevation: MaterialStateProperty.all(0),
                   ),
                   child: Text(
@@ -174,7 +195,7 @@ class _calcAduboPageState extends State<CalcAduboPage> {
                   ),
                 ),
               ),
-          ],
+            ],
           ],
         ),
       ),

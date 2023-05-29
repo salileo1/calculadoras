@@ -40,13 +40,19 @@ class _calc_semente1State extends State<calc_semente2> {
             size: 32,
           ),
           elevation: 0,
-          title: Text(
+           title: Text(
             'Semente',
             style: TextStyle(
               fontSize: 28,
-              color: Colors.black87,
+              color: Colors.black54,
               fontWeight: FontWeight.bold,
             ),
+          ),
+          leading: IconButton(
+            icon: Icon(Icons.arrow_back),
+            onPressed: () {
+              Navigator.pop(context);
+            },
           ),
 
           //Imagem do canto superior esquerdo

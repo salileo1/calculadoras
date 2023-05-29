@@ -60,11 +60,13 @@ class _calcSementeState extends State<CalcSementePage> {
           ),
         ),
         //Imagem do canto superior esquerdo
-        actions: [Container(
-          
-          width: 50,
-          child: Image.network('https://logowik.com/content/uploads/images/flutter5786.jpg'),
-        )],
+        actions: [
+          Container(
+            width: 50,
+            child: Image.network(
+                'https://logowik.com/content/uploads/images/flutter5786.jpg'),
+          )
+        ],
       ),
       body: Container(
         alignment: Alignment.topCenter,
@@ -199,14 +201,17 @@ class _calcSementeState extends State<CalcSementePage> {
               Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-                   Padding(
-                          padding: EdgeInsets.only(left:15, bottom: 0, right: 20, top:10), //apply padding horizontal or vertical only
-                          child: Text(
-                    "Escolha o tipo de cálculo: ",
-                    style: TextStyle(fontSize: 25, color: Colors.black54),
-                    
+                  Padding(
+                    padding: EdgeInsets.only(
+                        left: 15,
+                        bottom: 0,
+                        right: 20,
+                        top: 10), //apply padding horizontal or vertical only
+                    child: Text(
+                      "Escolha o tipo de cálculo: ",
+                      style: TextStyle(fontSize: 25, color: Colors.black54),
+                    ),
                   ),
-                        ),
                   SizedBox(height: 16),
                   Container(
                     width: double.infinity,
@@ -276,7 +281,7 @@ class _calcSementeState extends State<CalcSementePage> {
                           showAdditionalButtonFinal7 = false;
                           _addclick1 = false;
                           _addclick2 = true;
-                           _addclick3 = false;
+                          _addclick3 = false;
                           _addclick4 = false;
                           _addclick5 = false;
                           _addclick6 = false;
@@ -306,14 +311,16 @@ class _calcSementeState extends State<CalcSementePage> {
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   Padding(
-                          padding: EdgeInsets.only(left:15, bottom: 0, right: 20, top:10), //apply padding horizontal or vertical only
-                          child: Text(
-                    "Escolha o tipo de cálculo: ",
-                    style: TextStyle(fontSize: 25, color: Colors.black54),
-                    
+                    padding: EdgeInsets.only(
+                        left: 15,
+                        bottom: 0,
+                        right: 20,
+                        top: 10), //apply padding horizontal or vertical only
+                    child: Text(
+                      "Escolha o tipo de cálculo: ",
+                      style: TextStyle(fontSize: 25, color: Colors.black54),
+                    ),
                   ),
-                        ),
-                  
                   SizedBox(height: 16),
                   Container(
                     width: double.infinity,
@@ -412,14 +419,17 @@ class _calcSementeState extends State<CalcSementePage> {
               Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-                   Padding(
-                          padding: EdgeInsets.only(left:15, bottom: 0, right: 20, top:10), //apply padding horizontal or vertical only
-                          child: Text(
-                    "Escolha o tipo de cálculo: ",
-                    style: TextStyle(fontSize: 25, color: Colors.black54),
-                    
+                  Padding(
+                    padding: EdgeInsets.only(
+                        left: 15,
+                        bottom: 0,
+                        right: 20,
+                        top: 10), //apply padding horizontal or vertical only
+                    child: Text(
+                      "Escolha o tipo de cálculo: ",
+                      style: TextStyle(fontSize: 25, color: Colors.black54),
+                    ),
                   ),
-                        ),
                   SizedBox(height: 16),
                   Container(
                     width: double.infinity,
@@ -512,7 +522,7 @@ class _calcSementeState extends State<CalcSementePage> {
                       ),
                     ),
                   ),
-                   SizedBox(height: 16),
+                  SizedBox(height: 16),
                   Container(
                     width: double.infinity,
                     decoration: BoxDecoration(
@@ -762,27 +772,50 @@ class _calcSementeState extends State<CalcSementePage> {
                   ),
                 ),
               ),
-
             ],
-
             SizedBox(height: 50),
             Text(
               'Precisa de ajuda?',
-              style: TextStyle(fontSize: 30, color: Colors.black87, fontWeight: FontWeight.bold),
+              style: TextStyle(
+                  fontSize: 30,
+                  color: Colors.black87,
+                  fontWeight: FontWeight.bold),
             ),
-             SizedBox(height: 25),
+            SizedBox(height: 25),
             Container(
-              child: Text(
-              'Veja instruções de semente.',
-              style: TextStyle(fontSize: 25, color: Colors.black54, fontWeight: FontWeight.bold),
-            ),
-            )
-           
-           
-            
-          ],
+                child: Row(
+              children: [
+                Image.network(
+                  "https://logowik.com/content/uploads/images/flutter5786.jpg",
+                  width: 50,
+                  height: 50,
+                ),
+                SizedBox(width: 10), // espaço entre a imagem e o texto
+                Text(
+                  'Veja instruções de semente.',
+                  style: TextStyle(
+                    fontSize: 25,
+                    color: Colors.black54,
+                    fontWeight: FontWeight.bold,
+                  ),
+                ),
+                 SizedBox(width: 10), // espaço entre o texto e a seta
+      InkWell(
+        onTap: () {
+          // Adicione aqui a função de navegação para outro arquivo
+        },
+        child: Icon(
+          Icons.arrow_forward,
+          color: Colors.green,
+          size: 40,
         ),
-        
+      ),
+              ],
+            )
+            )
+          ],
+          
+        ),
       ),
     );
   }

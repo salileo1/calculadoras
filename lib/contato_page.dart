@@ -20,8 +20,17 @@ Future <void> _launchTeste2() async {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: Text('Página Contato'),
+      appBar: PreferredSize(
+         preferredSize: Size.fromHeight(250.0), // here the desired height
+          child: AppBar(
+            
+             backgroundColor: Colors.green,
+             toolbarHeight: 80,
+           title: Text('Página Contato',style: TextStyle(
+            fontSize: 28,
+            color: Colors.white,
+          ),
+           ),),
       ),
       body: Center(
         child: Column(
@@ -35,10 +44,17 @@ Future <void> _launchTeste2() async {
             ElevatedButton(
               onPressed: _launchTeste1,
               child: Text('Abrir Link teste1'),
+              style: ElevatedButton.styleFrom(
+                backgroundColor: Colors.green,
+              ),
             ),
             ElevatedButton(
               onPressed: _launchTeste2,
               child: Text('Abrir Link teste2'),
+
+              style: ElevatedButton.styleFrom(
+                backgroundColor: Colors.green,
+              ),
             ),
           ],
         ),

@@ -28,15 +28,14 @@ class _calc_semente5State extends State<calc_semente5> {
     int peso = int.tryParse(_lengthController.text) ?? 0;
     int espacamento = int.tryParse(_widthController.text) ?? 0;
     double potencial = double.tryParse(_lastController.text) ?? 0.0;
-    
+
     double calculo1 = 10000 / (espacamento / 100);
     double calculo2 = plantas / calculo1;
     double calculo3 = 100 + (100 - potencial);
-    double calculo4 = (calculo2 * calculo3) / 100; 
+    double calculo4 = (calculo2 * calculo3) / 100;
     double calculo5 = (calculo4 * peso) / 1000;
-    double calculo6 = plantas + (plantas / 20 
-    );
-    double calculo7 = calculo5 * calculo1 /1000;
+    double calculo6 = plantas + (plantas / 20);
+    double calculo7 = calculo5 * calculo1 / 1000;
 
     setState(() {
       _result = double.parse(calculo5.toStringAsFixed(2));
@@ -51,73 +50,145 @@ class _calc_semente5State extends State<calc_semente5> {
     return MaterialApp(
       home: Scaffold(
         appBar: AppBar(
-        toolbarHeight: 80,
-        backgroundColor: const Color.fromARGB(255, 255, 255, 255),
-        centerTitle: true,
-        iconTheme: IconThemeData(
-          color: Colors.black,
-          size: 32,
-        ),
-        elevation: 0,
-        title: Text(
-          'Sementes',
-          style: TextStyle(
-            fontSize: 28,
-            color: Color.fromARGB(255, 0, 0, 0),
+          toolbarHeight: 80,
+          backgroundColor: const Color.fromARGB(255, 255, 255, 255),
+          centerTitle: false,
+          iconTheme: IconThemeData(
+            color: Colors.green,
+            size: 32,
           ),
+          elevation: 0,
+          title: Text(
+            'Semente',
+            style: TextStyle(
+              fontSize: 28,
+              color: Color.fromARGB(255, 0, 0, 0),
+            ),
+          ),
+           leading: IconButton(
+            icon: Icon(Icons.arrow_back),
+            onPressed: () {
+              Navigator.pop(context);
+            },
+          ),
+          actions: [
+            Container(
+              width: 50,
+              child: Image.network(
+                  'https://logowik.com/content/uploads/images/flutter5786.jpg'),
+            )
+          ],
         ),
-      ),
         body: Padding(
           padding: EdgeInsets.all(16.0),
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.stretch,
             children: [
+              Padding(
+                padding: EdgeInsets.all(15), //apply padding to all four sides
+                child: Text("Plantas desejadas/Ha"),
+              ),
               TextField(
                 controller: _newController,
                 keyboardType: TextInputType.number,
                 decoration: InputDecoration(
-                  labelText: 'Plantas desejadas/Ha',
-                ),
+                    filled: true,
+                    fillColor: Colors.black12,
+                    border: OutlineInputBorder(
+                        borderSide: BorderSide.none,
+                        borderRadius: BorderRadius.circular(20))),
+              ),
+
+              Padding(
+                padding: EdgeInsets.all(15), //apply padding to all four sides
+                child: Text("Grãos por m²"),
               ),
               TextField(
                 controller: _seedsController,
                 keyboardType: TextInputType.number,
                 decoration: InputDecoration(
-                  labelText: 'Grãos por m²',
+                 filled: true,
+                    fillColor: Colors.black12,
+                    border: OutlineInputBorder(
+                        borderSide: BorderSide.none,
+                        borderRadius: BorderRadius.circular(20))
                 ),
+              ),
+
+              Padding(
+                padding: EdgeInsets.all(15), //apply padding to all four sides
+                child: Text("Peso 100 Grãos (Gramas)"),
               ),
               TextField(
                 controller: _lengthController,
                 keyboardType: TextInputType.number,
                 decoration: InputDecoration(
-                  labelText: 'Peso 100 Grãos (Gramas)',
+                  filled: true,
+                    fillColor: Colors.black12,
+                    border: OutlineInputBorder(
+                        borderSide: BorderSide.none,
+                        borderRadius: BorderRadius.circular(20))
                 ),
+              ),
+
+               Padding(
+                padding: EdgeInsets.all(15), //apply padding to all four sides
+                child: Text("Espaçamento (Centímetros)"),
               ),
               TextField(
                 controller: _widthController,
                 keyboardType: TextInputType.number,
                 decoration: InputDecoration(
-                  labelText: 'Espacamento (Centimetros)',
+                 filled: true,
+                    fillColor: Colors.black12,
+                    border: OutlineInputBorder(
+                        borderSide: BorderSide.none,
+                        borderRadius: BorderRadius.circular(20))
                 ),
+              ),
+
+              Padding(
+                padding: EdgeInsets.all(15), //apply padding to all four sides
+                child: Text("Potencial Germinativo"),
               ),
               TextField(
                 controller: _lastController,
                 keyboardType: TextInputType.number,
                 decoration: InputDecoration(
-                  labelText: 'Potencial Germinativo',
+                  filled: true,
+                    fillColor: Colors.black12,
+                    border: OutlineInputBorder(
+                        borderSide: BorderSide.none,
+                        borderRadius: BorderRadius.circular(20))
                 ),
               ),
               SizedBox(height: 16.0),
               ElevatedButton(
                 onPressed: () {
-                    _calcular();
-                    Navigator.push(
-                      context,
-                      MaterialPageRoute(builder: (context) => resultado(titulo: "Sementes", result: "Gramas/metro: $_result", texto: "Sementes/metro: $resposta2 \n Sementes/Ha: $resposta3 \n Kg/Ha: $resposta4")),
-                    );
-                  },
-                
-                child: Text('Calcular'),
+                  _calcular();
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                        builder: (context) => resultado(
+                            titulo: "Sementes",
+                            result: "Gramas/metro: $_result",
+                            texto:
+                                "Sementes/metro: $resposta2 \n Sementes/Ha: $resposta3 \n Kg/Ha: $resposta4")),
+                  );
+                },
+                child: Text('Calcular',style:TextStyle(
+                  color: Colors.white,
+                  fontSize: 15,
+                 )),
+                  style: ElevatedButton.styleFrom(
+                  shadowColor: Colors.black,
+                  elevation: 10.0,
+                  backgroundColor: Colors.orange,
+                   padding: EdgeInsets.symmetric(horizontal: 20.0, vertical: 20.0),
+                  shape: RoundedRectangleBorder(
+                    borderRadius: BorderRadius.circular(20),
+                  )
+                )
               ),
             ],
           ),

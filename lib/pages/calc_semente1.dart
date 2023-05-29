@@ -50,10 +50,16 @@ class _calc_semente1State extends State<calc_semente1> {
             'Semente',
             style: TextStyle(
               fontSize: 28,
-              color: Colors.black87,
+              color: Colors.black54,
+              fontWeight: FontWeight.bold,
             ),
           ),
-
+          leading: IconButton(
+            icon: Icon(Icons.arrow_back),
+            onPressed: () {
+              Navigator.pop(context);
+            },
+          ),
           //Imagem do canto superior esquerdo
           actions: [
             Container(
@@ -112,35 +118,31 @@ class _calc_semente1State extends State<calc_semente1> {
               ),
               SizedBox(height: 16.0),
               ElevatedButton(
-                
-                onPressed: () {
-                  _calcular();
-                  Navigator.push(
-                    context,
-                    MaterialPageRoute(
-                        builder: (context) => resultado(
-                            titulo: "Sementes",
-                            result: "$_result",
-                            texto: "em metros")),
-                  );
-                },
-                
-                child: Text('Calcular',
-                style:TextStyle(
-                  color: Colors.white,
-                  fontSize: 15,
-                 )
-                 ),
-                 style: ElevatedButton.styleFrom(
-                  shadowColor: Colors.black,
-                  elevation: 10.0,
-                  backgroundColor: Colors.orange,
-                   padding: EdgeInsets.symmetric(horizontal: 20.0, vertical: 20.0),
-                  shape: RoundedRectangleBorder(
-                    borderRadius: BorderRadius.circular(20),
-                  )
-                )
-              ),
+                  onPressed: () {
+                    _calcular();
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                          builder: (context) => resultado(
+                              titulo: "Sementes",
+                              result: "$_result",
+                              texto: "em metros")),
+                    );
+                  },
+                  child: Text('Calcular',
+                      style: TextStyle(
+                        color: Colors.white,
+                        fontSize: 15,
+                      )),
+                  style: ElevatedButton.styleFrom(
+                      shadowColor: Colors.black,
+                      elevation: 10.0,
+                      backgroundColor: Colors.orange,
+                      padding: EdgeInsets.symmetric(
+                          horizontal: 20.0, vertical: 20.0),
+                      shape: RoundedRectangleBorder(
+                        borderRadius: BorderRadius.circular(20),
+                      ))),
               SizedBox(height: 16.0),
               Text(
                 'Contagem de sementes por metro: $_result',

@@ -39,9 +39,9 @@ class _calc_adubo2State extends State<calc_adubo2> {
         appBar: AppBar(
         toolbarHeight: 80,
         backgroundColor: const Color.fromARGB(255, 255, 255, 255),
-        centerTitle: true,
-        iconTheme: IconThemeData(
-          color: Colors.black,
+        centerTitle: false,
+         iconTheme: IconThemeData(
+          color: Colors.green,
           size: 32,
         ),
         elevation: 0,
@@ -49,34 +49,73 @@ class _calc_adubo2State extends State<calc_adubo2> {
           'Adubo',
           style: TextStyle(
             fontSize: 28,
-            color: Color.fromARGB(255, 0, 0, 0),
+            color: Colors.black54,
           ),
         ),
+        leading: IconButton(
+            icon: Icon(Icons.arrow_back),
+            onPressed: () {
+              Navigator.pop(context);
+            },
+          ),
+        actions: [
+            Container(
+              width: 50,
+              child: Image.network(
+                  'https://logowik.com/content/uploads/images/flutter5786.jpg'),
+            )
+          ],
       ),
         body: Padding(
           padding: EdgeInsets.all(16.0),
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.stretch,
             children: [
+              Padding(
+                padding: EdgeInsets.all(15), //apply padding to all four sides
+                child: Text("Coleta (gramas)"),
+              ),
               TextField(
                 controller: _seedsController,
                 keyboardType: TextInputType.number,
                 decoration: InputDecoration(
-                  labelText: 'Coleta (gramas)',
+                 filled: true,
+                    fillColor: Colors.black12,
+                    border: OutlineInputBorder(
+                        borderSide: BorderSide.none,
+                        borderRadius: BorderRadius.circular(20))
                 ),
+              ),
+               Padding(
+                padding: EdgeInsets.all(15), //apply padding to all four sides
+                child: Text("Espacamento"),
               ),
               TextField(
                 controller: _lengthController,
                 keyboardType: TextInputType.number,
                 decoration: InputDecoration(
-                  labelText: 'Espaçamento',
+                 filled: true,
+                    fillColor: Colors.black12,
+                    border: OutlineInputBorder(
+                        borderSide: BorderSide.none,
+                        borderRadius: BorderRadius.circular(20))
                 ),
               ),
+
+                Padding(
+                padding: EdgeInsets.all(15), //apply padding to all four sides
+                child: Text("Distância"),
+              ),
+
               TextField(
                 controller: _widthController,
                 keyboardType: TextInputType.number,
                 decoration: InputDecoration(
-                  labelText: 'Distância',
+                filled: true,
+                    fillColor: Colors.black12,
+                    border: OutlineInputBorder(
+                        borderSide: BorderSide.none,
+                        borderRadius: BorderRadius.circular(20))
                 ),
               ),
               SizedBox(height: 16.0),
@@ -89,7 +128,19 @@ class _calc_adubo2State extends State<calc_adubo2> {
                     );
                   },
                 
-                child: Text('Calcular'),
+                child: Text('Calcular',style:TextStyle(
+                  color: Colors.white,
+                  fontSize: 15,
+                 )),
+
+                 style: ElevatedButton.styleFrom(
+                  shadowColor: Colors.black,
+                  elevation: 10.0,
+                  backgroundColor: Colors.orange,
+                   padding: EdgeInsets.symmetric(horizontal: 20.0, vertical: 20.0),
+                  shape: RoundedRectangleBorder(
+                    borderRadius: BorderRadius.circular(20),
+                  ))
               ),
               SizedBox(height: 16.0),
               Text(

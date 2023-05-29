@@ -54,51 +54,106 @@ class _calc_semente6State extends State<calc_semente6> {
         appBar: AppBar(
         toolbarHeight: 80,
         backgroundColor: const Color.fromARGB(255, 255, 255, 255),
-        centerTitle: true,
+        centerTitle: false,
         iconTheme: IconThemeData(
-          color: Colors.black,
+          color: Colors.green,
           size: 32,
         ),
         elevation: 0,
-        title: Text(
-          'Sementes',
-          style: TextStyle(
-            fontSize: 28,
-            color: Color.fromARGB(255, 0, 0, 0),
+         title: Text(
+            'Semente',
+            style: TextStyle(
+              fontSize: 28,
+              color: Colors.black54,
+              fontWeight: FontWeight.bold,
+            ),
           ),
-        ),
+          leading: IconButton(
+            icon: Icon(Icons.arrow_back),
+            onPressed: () {
+              Navigator.pop(context);
+            },
+          ),
+          actions: [
+            Container(
+              width: 50,
+              child: Image.network(
+                  'https://logowik.com/content/uploads/images/flutter5786.jpg'),
+            )
+          ],
+       
       ),
         body: Padding(
           padding: EdgeInsets.all(16.0),
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.stretch,
             children: [
+
+              Padding(
+                padding: EdgeInsets.all(15), //apply padding to all four sides
+                child: Text("Gramas por metro"),
+              ),
+
               TextField(
                 controller: _seedsController,
                 keyboardType: TextInputType.number,
                 decoration: InputDecoration(
-                  labelText: 'Gramas por metro',
+                  filled: true,
+                    fillColor: Colors.black12,
+                    border: OutlineInputBorder(
+                        borderSide: BorderSide.none,
+                        borderRadius: BorderRadius.circular(20))
                 ),
               ),
+
+              Padding(
+                padding: EdgeInsets.all(15), //apply padding to all four sides
+                child: Text("Peso 100 Grãos (Gramas)"),
+              ),
+              
               TextField(
                 controller: _lengthController,
                 keyboardType: TextInputType.number,
                 decoration: InputDecoration(
-                  labelText: 'Peso 100 Grãos (Gramas)',
+                  filled: true,
+                    fillColor: Colors.black12,
+                    border: OutlineInputBorder(
+                        borderSide: BorderSide.none,
+                        borderRadius: BorderRadius.circular(20))
                 ),
               ),
+
+              Padding(
+                padding: EdgeInsets.all(15), //apply padding to all four sides
+                child: Text("Espaçamento (Centímetros)"),
+              ),
+
               TextField(
                 controller: _widthController,
                 keyboardType: TextInputType.number,
                 decoration: InputDecoration(
-                  labelText: 'Espacamento (Centimetros)',
+                  filled: true,
+                    fillColor: Colors.black12,
+                    border: OutlineInputBorder(
+                        borderSide: BorderSide.none,
+                        borderRadius: BorderRadius.circular(20))
                 ),
               ),
+
+              Padding(
+                padding: EdgeInsets.all(15), //apply padding to all four sides
+                child: Text("Potencial Germinativo"),
+              ),
+
               TextField(
                 controller: _lastController,
                 keyboardType: TextInputType.number,
                 decoration: InputDecoration(
-                  labelText: 'Potencial Germinativo',
+                  filled: true,
+                    fillColor: Colors.black12,
+                    border: OutlineInputBorder(
+                        borderSide: BorderSide.none,
+                        borderRadius: BorderRadius.circular(20))
                 ),
               ),
               SizedBox(height: 16.0),
@@ -111,7 +166,22 @@ class _calc_semente6State extends State<calc_semente6> {
                     );
                   },
                 
-                child: Text('Calcular'),
+                child: Text('Calcular',
+                 style:TextStyle(
+                  color: Colors.white,
+                  fontSize: 15,)
+                  ),
+
+                   style: ElevatedButton.styleFrom(
+                  shadowColor: Colors.black,
+                  elevation: 10.0,
+                  backgroundColor: Colors.orange,
+                   padding: EdgeInsets.symmetric(horizontal: 20.0, vertical: 20.0),
+                  shape: RoundedRectangleBorder(
+                    borderRadius: BorderRadius.circular(20),
+                  )
+                )
+                  
               ),
             ],
           ),

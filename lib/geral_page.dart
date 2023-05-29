@@ -15,7 +15,7 @@ class GeralPage extends StatelessWidget {
           children: [
             Container(
               width: 800,
-              height: 400,
+              height: 300,
               decoration: BoxDecoration(
                 color: Color(0xFF09C10E),
               ),
@@ -49,7 +49,7 @@ class GeralPage extends StatelessWidget {
               ),
             ),
             Container(
-              padding: EdgeInsets.all(50),
+              padding: EdgeInsets.all(20),
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
@@ -63,10 +63,10 @@ class GeralPage extends StatelessWidget {
                       ),
                     ),
                   ),
-                  SizedBox(height: 50),
+                  SizedBox(height: 30),
                   ButtonTheme(
-                    minWidth: 250,
-                    height: 70,
+                    minWidth: 200.0,
+  height: 100.0,
                     child: Row(
                       mainAxisAlignment: MainAxisAlignment.center,
                       children: [
@@ -74,13 +74,18 @@ class GeralPage extends StatelessWidget {
                           onPressed: () {
                             Navigator.push(
                               context,
-                              MaterialPageRoute(builder: (context) => CalcSementePage()),
+                              MaterialPageRoute(
+                                  builder: (context) => CalcSementePage()),
                             );
                           },
                           style: ElevatedButton.styleFrom(
                             backgroundColor: Colors.green,
                             foregroundColor: Colors.white,
-                          ),
+                             shape: RoundedRectangleBorder(
+                            borderRadius: BorderRadius.circular(20),
+                           ),),
+                            
+                         
                           child: Text(
                             'Sementes',
                             style: TextStyle(
@@ -88,17 +93,22 @@ class GeralPage extends StatelessWidget {
                             ),
                           ),
                         ),
-                        SizedBox(width: 30),
+                        SizedBox(width: 50),
                         ElevatedButton(
                           onPressed: () {
                             Navigator.push(
                               context,
-                              MaterialPageRoute(builder: (context) => CalcAduboPage()),
+                              MaterialPageRoute(
+                                  builder: (context) => CalcAduboPage()),
                             );
                           },
                           style: ElevatedButton.styleFrom(
+                           
                             backgroundColor: Colors.green,
                             foregroundColor: Colors.white,
+                             shape: RoundedRectangleBorder(
+                            borderRadius: BorderRadius.circular(20),
+                            )
                           ),
                           child: Text(
                             'Adubo',
@@ -122,33 +132,101 @@ class GeralPage extends StatelessWidget {
                     ),
                   ),
                   SizedBox(height: 16),
-                  ElevatedButton.icon(
-                    onPressed: () {
-                      // Ação do botão transparente
-                    },
-                    style: ElevatedButton.styleFrom(
-                      backgroundColor: Colors.transparent,
-                      foregroundColor: Colors.transparent,
-                      elevation: 0,
-                    ),
-                    label: Text(
-                      'Texto do botão',
-                      style: TextStyle(
-                        fontSize: 20,
-                        fontWeight: FontWeight.bold,
-                        color: Colors.green,
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.start, // Alinha os elementos à direita
+                    children: [
+                      Container(
+                        child: Row(
+                          children: [
+                            Image.network(
+                              "https://logowik.com/content/uploads/images/flutter5786.jpg",
+                              width: 50,
+                              height: 50,
+                            ),
+                            SizedBox( width: 10), // espaço entre a imagem e o texto
+                            Text(
+                              'Veja instruções de semente.',
+                              style: TextStyle(
+                                fontSize: 23,
+                                color: Colors.black54,
+                                fontWeight: FontWeight.bold,
+                              ),
+                            ),
+                           
+                             
+                          ],
+                        ),
                       ),
-                    ),
-                    icon: Icon(
-                      Icons.arrow_forward,
-                      color: Colors.green,
-                      size: 30,
-                    ),
+                      SizedBox(width: 5),
+                      ElevatedButton.icon(
+                        icon: Icon(
+                          Icons.arrow_forward,
+                          color: Colors.green,
+                          size: 30,
+                        ),
+                        onPressed: () {
+                          // Ação do botão transparente
+                        },
+                        style: ElevatedButton.styleFrom(
+                          backgroundColor: Colors.transparent,
+                          foregroundColor: Colors.transparent,
+                          elevation: 0,
+                        ),
+                        label:
+                            Text(''), // Removido o conteúdo de texto do botão
+                      ),
+                    ],
+                  ),
+
+                  Padding(padding: EdgeInsets.all(15),),
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.start, // Alinha os elementos à direita
+                    children: [
+                      Container(
+                        child: Row(
+                          children: [
+                            Image.network(
+                              "https://logowik.com/content/uploads/images/flutter5786.jpg",
+                              width: 50,
+                              height: 50,
+                            ),
+                            SizedBox( width: 10), // espaço entre a imagem e o texto
+                            Text(
+                              'Veja instruções de coleta.',
+                              style: TextStyle(
+                                fontSize: 23,
+                                color: Colors.black54,
+                                fontWeight: FontWeight.bold,
+                              ),
+                            ),
+                           
+                             
+                          ],
+                        ),
+                      ),
+                      SizedBox(width: 5),
+                      ElevatedButton.icon(
+                        icon: Icon(
+                          Icons.arrow_forward,
+                          color: Colors.green,
+                          size: 30,
+                        ),
+                        onPressed: () {
+                          // Ação do botão transparente
+                        },
+                        style: ElevatedButton.styleFrom(
+                          backgroundColor: Colors.transparent,
+                          foregroundColor: Colors.transparent,
+                          elevation: 0,
+                        ),
+                        label:
+                            Text(''), // Removido o conteúdo de texto do botão
+                      ),
+                    ],
                   ),
                 ],
               ),
             ),
-
           ],
         ),
       ),
