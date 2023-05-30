@@ -6,6 +6,7 @@ import 'package:teste_calculadora/pages/calc_semente5.dart';
 import 'package:teste_calculadora/pages/calc_semente4.dart';
 import 'package:teste_calculadora/pages/calc_semente6.dart';
 import 'package:teste_calculadora/pages/calc_semente7.dart';
+import 'package:teste_calculadora/instru_semetes.dart';
 import '../geral_page.dart';
 import '../sobre_page.dart';
 import '../contato_page.dart';
@@ -13,6 +14,8 @@ import '../contato_page.dart';
 class CalcSementePage extends StatefulWidget {
   @override
   _calcSementeState createState() => _calcSementeState();
+  
+  
 }
 
 class _calcSementeState extends State<CalcSementePage> {
@@ -782,38 +785,51 @@ class _calcSementeState extends State<CalcSementePage> {
                   fontWeight: FontWeight.bold),
             ),
             SizedBox(height: 25),
-            Container(
-                child: Row(
-              children: [
-                Image.network(
-                  "https://logowik.com/content/uploads/images/flutter5786.jpg",
-                  width: 50,
-                  height: 50,
-                ),
-                SizedBox(width: 10), // espaço entre a imagem e o texto
-                Text(
-                  'Veja instruções de semente.',
-                  style: TextStyle(
-                    fontSize: 25,
-                    color: Colors.black54,
-                    fontWeight: FontWeight.bold,
-                  ),
-                ),
-                 SizedBox(width: 10), // espaço entre o texto e a seta
-      InkWell(
-        onTap: () {
-          // Adicione aqui a função de navegação para outro arquivo
-        },
+            Row(
+  mainAxisAlignment: MainAxisAlignment.start, // Alinha os elementos à direita
+  children: [
+    Container(
+      child: Row(
+        children: [
+          Image.network(
+            "https://logowik.com/content/uploads/images/flutter5786.jpg",
+            width: 50,
+            height: 50,
+          ),
+          SizedBox(width: 10), // espaço entre a imagem e o texto
+          Text(
+            'Veja instruções de semente.',
+            style: TextStyle(
+              fontSize: 23,
+              color: Colors.black54,
+              fontWeight: FontWeight.bold,
+            ),
+          ),
+        ],
+      ),
+    ),
+    SizedBox(width: 5),
+    InkWell(
+      onTap: () {
+        Navigator.push(
+          context,
+          MaterialPageRoute(builder: (context) => InstruSemetes()),
+        );
+      },
+      child: Container(
+        padding: EdgeInsets.all(12), // Ajuste o espaçamento interno conforme necessário
         child: Icon(
           Icons.arrow_forward,
           color: Colors.green,
-          size: 40,
+          size: 30,
         ),
       ),
-              ],
-            )
-            )
+    ),
+  ],
+),
+
           ],
+          
           
         ),
       ),

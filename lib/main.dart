@@ -1,8 +1,10 @@
 import 'package:flutter/material.dart';
+import 'package:teste_calculadora/instru_semetes.dart';
 import 'package:teste_calculadora/pages/calc_semente.dart';
 import 'geral_page.dart';
 import 'sobre_page.dart';
 import 'contato_page.dart';
+import 'login.dart';
 
 void main() {
   runApp(MyApp());
@@ -33,6 +35,7 @@ class _HomePageState extends State<HomePage> {
     SobrePage(),
     ContatoPage(),
     CalcSementePage(),
+    InstruSemetes(),
   ];
 
   void _onItemTapped(int index) {
@@ -44,9 +47,10 @@ class _HomePageState extends State<HomePage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      
       body: _widgetOptions.elementAt(_selectedIndex),
       bottomNavigationBar: BottomNavigationBar(
-        fixedColor: Colors.green,
+        fixedColor: const Color.fromRGBO(123, 172, 57, 100),
         items: const <BottomNavigationBarItem>[
           BottomNavigationBarItem(
             

@@ -24,7 +24,7 @@ class _calcAduboPageState extends State<CalcAduboPage> {
         backgroundColor: const Color.fromARGB(255, 255, 255, 255),
         centerTitle: false,
        iconTheme: IconThemeData(
-          color: Colors.green,
+          color: const Color.fromRGBO(123, 172, 57, 100),
           size: 32,
         ),
         elevation: 0,
@@ -59,8 +59,8 @@ class _calcAduboPageState extends State<CalcAduboPage> {
               width: double.infinity,
               decoration: BoxDecoration(
                   color:
-                      showAdditionalButtonFinal1 ? Colors.green : Colors.white,
-                  border: Border.all(color: Colors.green),
+                      showAdditionalButtonFinal1 ? const Color.fromRGBO(123, 172, 57, 100):  Colors.white,
+                  border: Border.all(color: const Color.fromRGBO(123, 172, 57, 100),),
                   borderRadius: BorderRadius.circular(10)),
               child: ElevatedButton(
                 onPressed: () {
@@ -73,11 +73,11 @@ class _calcAduboPageState extends State<CalcAduboPage> {
                   backgroundColor: MaterialStateProperty.resolveWith<Color>(
                     (Set<MaterialState> states) {
                       if (states.contains(MaterialState.pressed)) {
-                        return Colors.green
+                        return const Color.fromRGBO(123, 172, 57, 100)
                             .withOpacity(0); // Define a cor quando pressionado
                       }
                       return showAdditionalButtonFinal1
-                          ? Colors.green
+                          ? const Color.fromRGBO(123, 172, 57, 100)
                           : Colors
                               .white; // Cor com base no estado de showAdditionalButtonFinal1
                     },
@@ -89,7 +89,7 @@ class _calcAduboPageState extends State<CalcAduboPage> {
                   style: TextStyle(
                     color: showAdditionalButtonFinal1
                         ? Colors.white
-                        : Colors.green,
+                        : const Color.fromRGBO(123, 172, 57, 100),
                     fontSize: 25,
                   ),
                 ),
@@ -99,8 +99,8 @@ class _calcAduboPageState extends State<CalcAduboPage> {
             Container(
               width: double.infinity,
               decoration: BoxDecoration(
-                color: showAdditionalButtonFinal2 ? Colors.green : Colors.white,
-                border: Border.all(color: Colors.green),
+                color: showAdditionalButtonFinal2 ? const Color.fromRGBO(123, 172, 57, 100) : Colors.white,
+                border: Border.all(color: const Color.fromRGBO(123, 172, 57, 100),),
                 borderRadius: BorderRadius.circular(10),
               ),
               child: ElevatedButton(
@@ -114,11 +114,11 @@ class _calcAduboPageState extends State<CalcAduboPage> {
                   backgroundColor: MaterialStateProperty.resolveWith<Color>(
                     (Set<MaterialState> states) {
                       if (states.contains(MaterialState.pressed)) {
-                        return Colors.green
+                        return const Color.fromRGBO(123, 172, 57, 100)
                             .withOpacity(0); // Define a cor quando pressionado
                       }
                       return showAdditionalButtonFinal2
-                          ? Colors.green
+                          ? const Color.fromRGBO(123, 172, 57, 100)
                           : Colors
                               .white; // Cor com base no estado de showAdditionalButtonFinal1
                     },
@@ -130,7 +130,7 @@ class _calcAduboPageState extends State<CalcAduboPage> {
                   style: TextStyle(
                     color: showAdditionalButtonFinal2
                         ? Colors.white
-                        : Colors.green,
+                        : const Color.fromRGBO(123, 172, 57, 100),
                     fontSize: 25,
                   ),
                 ),
