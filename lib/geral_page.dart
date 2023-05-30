@@ -5,7 +5,7 @@ import 'sobre_page.dart';
 import 'contato_page.dart';
 import 'pages/calc_semente.dart';
 import 'instru_coleta.dart';
-import 'login.dart';
+import 'login_page.dart';
 
 
 class GeralPage extends StatelessWidget {
@@ -280,7 +280,7 @@ class GeralPage extends StatelessWidget {
                             SizedBox(
                                 width: 10), // espaço entre a imagem e o texto
                             Text(
-                              'Teste tela login',
+                              'Sair',
                               style: TextStyle(
                                 fontSize: 23,
                                 color: Colors.black54,
@@ -295,7 +295,7 @@ class GeralPage extends StatelessWidget {
                         onTap: () {
                           Navigator.push(
                             context,
-                            MaterialPageRoute(builder: (context) => Login()),
+                            MaterialPageRoute(builder: (context) => LoginPage()),
                           );
                         },
                         child: Container(

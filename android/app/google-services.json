@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "1096833744362",
+    "project_id": "calculadoras-fertisystem",
+    "storage_bucket": "calculadoras-fertisystem.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1096833744362:android:598a28a33e0f4cec090693",
+        "android_client_info": {
+          "package_name": "com.example.teste_calculadora"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyD5apIkkYQ4CBKnk6XaVo61VZk5Rx2KrV4"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

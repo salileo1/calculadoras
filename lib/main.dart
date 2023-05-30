@@ -4,9 +4,16 @@ import 'package:teste_calculadora/pages/calc_semente.dart';
 import 'geral_page.dart';
 import 'sobre_page.dart';
 import 'contato_page.dart';
-import 'login.dart';
+import 'check_page.dart';
+import 'package:firebase_core/firebase_core.dart';
+import 'package:firebase_auth/firebase_auth.dart';
+import 'firebase_options.dart';
 
-void main() {
+void main() async{
+  WidgetsFlutterBinding.ensureInitialized();
+  await Firebase.initializeApp(
+    options: DefaultFirebaseOptions.currentPlatform,
+  );
   runApp(MyApp());
 }
 
@@ -18,8 +25,8 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(  
         primarySwatch: Colors.blue,
       ),
-      home: HomePage(),
-    );
+      home: const checkPage(),
+    );  
   }
 }
 
