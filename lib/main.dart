@@ -25,7 +25,7 @@ class MyApp extends StatelessWidget {
       title: 'Meu Aplicativo',
        theme: ThemeData(
         primarySwatch: Colors.blue,
-        fontFamily: 'Branding',
+         fontFamily: GoogleFonts.nunitoSans().fontFamily,
       ),
       home: HomePage(),
     );  

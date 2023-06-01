@@ -49,7 +49,7 @@ class SobrePage extends StatelessWidget {
                 child: Padding(
                   padding: EdgeInsetsDirectional.fromSTEB(30, 20, 30, 20),
                   child: Text(
-                    '\nA fertiSystem surgiu em 2002 com o propósito de revolucionar a maneira de plantar, buscando levar ate os agricultores tecnologias sustentaveis que facilitem e proporcionem um plantio adequado e conservacionista, garantindo uma maior produtividade na lavoura e auxiliando a conservação do solo. Revolucionamos o mercado de dosadores de adubo com o FertiSystem Auto-Lab, proporcionando eficiencia na distribuicao do adubo, com uniformindade e precisao. Hoje estamos presentes em 95% das industrias de maquinas e implementos agricolas do Brasil, com exportacao para diversos paises do mundo.',
+                    '\nA FertiSystem surgiu em 2002 com o propósito de revolucionar a maneira de plantar, buscando levar ate os agricultores tecnologias sustentaveis que facilitem e proporcionem um plantio adequado e conservacionista, garantindo uma maior produtividade na lavoura e auxiliando a conservação do solo. Revolucionamos o mercado de dosadores de adubo com o FertiSystem Auto-Lab, proporcionando eficiencia na distribuicao do adubo, com uniformindade e precisao. Hoje estamos presentes em 95% das industrias de maquinas e implementos agricolas do Brasil, com exportacao para diversos paises do mundo.',
                     style: TextStyle(
                     fontSize: 20,
                     color: Colors.black54,

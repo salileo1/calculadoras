@@ -151,7 +151,7 @@ class _calc_semente1State extends State<calc_semente1> {
               SizedBox(height: 16.0),
               Text(
                 'Contagem de sementes por metro: $_result',
-                style: TextStyle(fontSize: 18.0),
+                style: TextStyle(fontSize: 18.0,color: Colors.black54),
               ),
             ],
           ),

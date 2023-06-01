@@ -9,6 +9,7 @@ import 'pages/calc_semente.dart';
 import 'instru_coleta.dart';
 import 'login_page.dart';
 import 'dart:async';
+import 'package:google_fonts/google_fonts.dart';
 
 
 class GeralPage extends StatefulWidget {
@@ -67,8 +68,8 @@ class _GeralPageState extends State<GeralPage> {
               children: [
                 Image.asset(
                   'assets/logo_dose_certa.png',
-                  height: 250,
-                  width: 250,
+                  height: 200,
+                  width: 200,
                   fit: BoxFit.cover,
                 ),
                 Column(
@@ -158,8 +159,7 @@ class _GeralPageState extends State<GeralPage> {
                                     Text(
                                       'Semente',
                                       style: TextStyle(
-                                        fontSize: 25,
-                                        fontFamily: ' fonts/BrandingBlack.otf',
+                                          fontSize: 30,
                                       ),
                                     ),
                                   ],
@@ -194,7 +194,7 @@ class _GeralPageState extends State<GeralPage> {
                                       'Adubo',
                                       style: TextStyle(
                                         fontSize: 25,
-                                        fontFamily: ' fonts/BrandingBlack.otf',
+                                        
                                       ),
                                     ),
                                   ],
@@ -237,7 +237,7 @@ class _GeralPageState extends State<GeralPage> {
                                   fontSize: 23,
                                   color: const Color.fromRGBO(96, 96, 96, 100),
                                   fontWeight: FontWeight.bold,
-                                  fontFamily: 'Schyler',
+                                  
                                 ),
                               ),
                             ],
@@ -293,7 +293,7 @@ class _GeralPageState extends State<GeralPage> {
                                   fontSize: 23,
                                   color: const Color.fromRGBO(96, 96, 96, 100),
                                   fontWeight: FontWeight.bold,
-                                  fontFamily: 'Schyler',
+                              
                                 ),
                               ),
                             ],
@@ -327,55 +327,8 @@ class _GeralPageState extends State<GeralPage> {
                         ),
                       ],
                     ),
-                    Padding(
-                      padding: EdgeInsets.all(15),
-                    ),
-                    Row(
-                      mainAxisAlignment: MainAxisAlignment
-                          .start, // Alinha os elementos à direita
-                      children: [
-                        Container(
-                          child: Row(
-                            children: [
-                              Image.network(
-                                "https://logowik.com/content/uploads/images/flutter5786.jpg",
-                                width: 50,
-                                height: 50,
-                              ),
-                              SizedBox(
-                                  width: 10), // espaço entre a imagem e o texto
-                              Text(
-                                'Sair',
-                                style: TextStyle(
-                                  fontSize: 23,
-                                  color: Colors.black54,
-                                  fontWeight: FontWeight.bold,
-                                ),
-                              ),
-                            ],
-                          ),
-                        ),
-                        SizedBox(width: 5),
-                        InkWell(
-                          onTap: () {
-                            Navigator.push(
-                              context,
-                              MaterialPageRoute(
-                                  builder: (context) => LoginPage()),
-                            );
-                          },
-                          child: Container(
-                            padding: EdgeInsets.all(
-                                12), // Ajuste o espaçamento interno conforme necessário
-                            child: Icon(
-                              Icons.arrow_forward,
-                              color: const Color.fromRGBO(123, 172, 57, 100),
-                              size: 30,
-                            ),
-                          ),
-                        ),
-                      ],
-                    ),
+                    
+                  
                   ],
                 ),
               ),

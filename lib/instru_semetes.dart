@@ -62,7 +62,7 @@ class InstruSemetes extends StatelessWidget {
                                   fontSize: 23,
                                   color: const Color.fromRGBO(96, 96, 96, 100),
                                   fontWeight: FontWeight.bold,
-                                  fontFamily: 'Schyler',
+                                  
                                 ),
                               ),
                             ],

@@ -40,6 +40,7 @@ dependencies:
   provider: ^6.0.5
   firebase_core: ^2.13.0
   firebase_auth: ^4.6.1
+  mailer: ^6.0.1
 
 dev_dependencies:
   flutter_test:
@@ -75,6 +76,7 @@ flutter:
    - 'assets/telefone.png'
    - assets/wpp.png
    - assets/logo_Verde.png
+
   #   - images/a_dot_ham.jpeg
 
   # An image asset can refer to one or more resolution-specific "variants", see
