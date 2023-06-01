@@ -12,10 +12,10 @@ class calc_semente3 extends StatefulWidget {
 }
 
 class _calc_semente3State extends State<calc_semente3> {
-  TextEditingController _seedsController = TextEditingController();
-  TextEditingController _lengthController = TextEditingController();
-  TextEditingController _widthController = TextEditingController();
-  TextEditingController _newController = TextEditingController();
+  TextEditingController _seedsController = TextEditingController(text: "180");
+  TextEditingController _lengthController = TextEditingController(text:"100");
+  TextEditingController _widthController = TextEditingController(text: "17");
+  TextEditingController _newController = TextEditingController(text: "10");
   double _result = 0.0;
   int distancia = 0;
 
@@ -66,11 +66,14 @@ class _calc_semente3State extends State<calc_semente3> {
             },
           ),
           //Imagem do canto superior esquerdo
-          actions: [
-            Container(
-              width: 50,
-              child: Image.network(
-                  'https://logowik.com/content/uploads/images/flutter5786.jpg'),
+           actions: [
+            Padding(
+               padding: const EdgeInsets.only(left: 10,right: 20),
+              child: Container(
+                width: 50,
+                child: Image.asset(
+                    'assets/logo_Verde.png'),
+              ),
             )
           ],
         ),
@@ -153,7 +156,7 @@ class _calc_semente3State extends State<calc_semente3> {
                   style: ElevatedButton.styleFrom(
                       shadowColor: Colors.black,
                       elevation: 10.0,
-                      backgroundColor: Colors.orange,
+                      backgroundColor: const Color.fromRGBO(246, 164, 54, 34),
                       padding: EdgeInsets.symmetric(
                           horizontal: 20.0, vertical: 20.0),
                       shape: RoundedRectangleBorder(

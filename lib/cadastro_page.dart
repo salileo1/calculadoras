@@ -1,6 +1,8 @@
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
-import 'check_page.dart';
+
+import 'geral_page.dart';
+
 
 class cadastroPage extends StatefulWidget {
   const cadastroPage({super.key});
@@ -23,7 +25,7 @@ class _cadastroPageState extends State<cadastroPage> {
         backgroundColor: const Color.fromARGB(255, 255, 255, 255),
         centerTitle: false,
         iconTheme: IconThemeData(
-          color: Colors.green,
+          color: const Color.fromARGB(255, 255, 255, 255),
           size: 32,
         ),
         elevation: 0,
@@ -43,12 +45,15 @@ class _cadastroPageState extends State<cadastroPage> {
         ),
         //Imagem do canto superior esquerdo
         actions: [
-          Container(
-            width: 50,
-            child: Image.network(
-                'https://logowik.com/content/uploads/images/flutter5786.jpg'),
-          )
-        ],
+            Padding(
+               padding: const EdgeInsets.only(left: 10,right: 20),
+              child: Container(
+                width: 50,
+                child: Image.asset(
+                    'assets/logo_Verde.png'),
+              ),
+            )
+          ],
       ),
       body: Padding(
         padding: EdgeInsets.all(12),
@@ -148,7 +153,7 @@ class _cadastroPageState extends State<cadastroPage> {
         userCredential.user!.updateDisplayName(_nomeController.text);
         Navigator.pushAndRemoveUntil(
             context,
-            MaterialPageRoute(builder: (context) => checkPage()),
+            MaterialPageRoute(builder: (context) => GeralPage()),
             (route) => false);
       }
     } on FirebaseAuthException catch (e) {

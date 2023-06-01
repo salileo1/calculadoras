@@ -12,10 +12,10 @@ class calc_semente7 extends StatefulWidget {
 }
 
 class _calc_semente7State extends State<calc_semente7> {
-  TextEditingController _seedsController = TextEditingController();
-  TextEditingController _lengthController = TextEditingController();
-  TextEditingController _widthController = TextEditingController();
-  TextEditingController _lastController = TextEditingController();
+  TextEditingController _seedsController = TextEditingController(text:"10");
+  TextEditingController _lengthController = TextEditingController(text:"36");
+  TextEditingController _widthController = TextEditingController(text:"17");
+  TextEditingController _lastController = TextEditingController(text:"100");
   double _result = 0.0;
 
 
@@ -64,10 +64,13 @@ class _calc_semente7State extends State<calc_semente7> {
             },
           ),
         actions: [
-            Container(
-              width: 50,
-              child: Image.network(
-                  'https://logowik.com/content/uploads/images/flutter5786.jpg'),
+            Padding(
+               padding: const EdgeInsets.only(left: 10,right: 20),
+              child: Container(
+                width: 50,
+                child: Image.asset(
+                    'assets/logo_Verde.png'),
+              ),
             )
           ],
       ),
@@ -163,7 +166,7 @@ Padding(
                  style: ElevatedButton.styleFrom(
                   shadowColor: Colors.black,
                   elevation: 10.0,
-                  backgroundColor: Colors.orange,
+                  backgroundColor: const Color.fromRGBO(246, 164, 54, 34),
                    padding: EdgeInsets.symmetric(horizontal: 20.0, vertical: 20.0),
                   shape: RoundedRectangleBorder(
                     borderRadius: BorderRadius.circular(20),

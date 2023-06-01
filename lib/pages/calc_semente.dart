@@ -10,6 +10,7 @@ import 'package:teste_calculadora/instru_semetes.dart';
 import '../geral_page.dart';
 import '../sobre_page.dart';
 import '../contato_page.dart';
+import "../main.dart";
 
 class CalcSementePage extends StatefulWidget {
   @override
@@ -40,6 +41,8 @@ class _calcSementeState extends State<CalcSementePage> {
   bool _addclick6 = false;
   bool _addclick7 = false;
 
+
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -50,7 +53,7 @@ class _calcSementeState extends State<CalcSementePage> {
         centerTitle: false,
         iconTheme: IconThemeData(
           //BOTAO RETROCEDER
-          color: Colors.green,
+          color: const Color.fromRGBO(123, 172, 57, 100),
           size: 35,
         ),
         elevation: 0,
@@ -64,12 +67,15 @@ class _calcSementeState extends State<CalcSementePage> {
         ),
         //Imagem do canto superior esquerdo
         actions: [
-          Container(
-            width: 50,
-            child: Image.network(
-                'https://logowik.com/content/uploads/images/flutter5786.jpg'),
-          )
-        ],
+            Padding(
+               padding: const EdgeInsets.only(left: 10,right: 20),
+              child: Container(
+                width: 50,
+                child: Image.asset(
+                    'assets/logo_Verde.png'),
+              ),
+            )
+          ],
       ),
       body: Container(
         alignment: Alignment.topCenter,
@@ -80,14 +86,15 @@ class _calcSementeState extends State<CalcSementePage> {
             SizedBox(height: 16),
             Text(
               'Escolha o tipo de semente:',
-              style: TextStyle(fontSize: 25),
+              style: TextStyle(fontSize: 25,
+              color: Colors.black54),
             ),
             SizedBox(height: 16),
             Container(
               width: double.infinity,
               decoration: BoxDecoration(
-                  color: (_click1 == false) ? Colors.white : Colors.green,
-                  border: Border.all(color: Colors.green),
+                  color: (_click1 == false) ? Colors.white : const Color.fromRGBO(123, 172, 57, 100),
+                  border: Border.all(color: const Color.fromRGBO(123, 172, 57, 100)),
                   borderRadius: BorderRadius.circular(20)),
               child: ElevatedButton(
                 onPressed: () {
@@ -115,7 +122,7 @@ class _calcSementeState extends State<CalcSementePage> {
                 child: Text(
                   'Graúdas',
                   style: TextStyle(
-                    color: (_click1 == true) ? Colors.white : Colors.green,
+                    color: (_click1 == true) ? Colors.white : const Color.fromRGBO(123, 172, 57, 100),
                     fontSize: 25,
                   ),
                 ),
@@ -125,8 +132,8 @@ class _calcSementeState extends State<CalcSementePage> {
             Container(
               width: double.infinity,
               decoration: BoxDecoration(
-                  color: (_click2 == false) ? Colors.white : Colors.green,
-                  border: Border.all(color: Colors.green),
+                  color: (_click2 == false) ? Colors.white : const Color.fromRGBO(123, 172, 57, 100),
+                  border: Border.all(color: const Color.fromRGBO(123, 172, 57, 100)),
                   borderRadius: BorderRadius.circular(20)),
               child: ElevatedButton(
                 onPressed: () {
@@ -154,7 +161,7 @@ class _calcSementeState extends State<CalcSementePage> {
                 child: Text(
                   'Finas',
                   style: TextStyle(
-                    color: (_click2 == true) ? Colors.white : Colors.green,
+                    color: (_click2 == true) ? Colors.white : const Color.fromRGBO(123, 172, 57, 100),
                     fontSize: 25,
                   ),
                 ),
@@ -164,8 +171,8 @@ class _calcSementeState extends State<CalcSementePage> {
             Container(
               width: double.infinity,
               decoration: BoxDecoration(
-                  color: (_click3 == false) ? Colors.white : Colors.green,
-                  border: Border.all(color: Colors.green),
+                  color: (_click3 == false) ? Colors.white : const Color.fromRGBO(123, 172, 57, 100),
+                  border: Border.all(color: const Color.fromRGBO(123, 172, 57, 100)),
                   borderRadius: BorderRadius.circular(20)),
               child: ElevatedButton(
                 onPressed: () {
@@ -193,7 +200,7 @@ class _calcSementeState extends State<CalcSementePage> {
                 child: Text(
                   'Contagem de sementes',
                   style: TextStyle(
-                    color: (_click3 == true) ? Colors.white : Colors.green,
+                    color: (_click3 == true) ? Colors.white : const Color.fromRGBO(123, 172, 57, 100),
                     fontSize: 25,
                   ),
                 ),
@@ -220,8 +227,8 @@ class _calcSementeState extends State<CalcSementePage> {
                     width: double.infinity,
                     decoration: BoxDecoration(
                         color:
-                            (_addclick1 == false) ? Colors.white : Colors.green,
-                        border: Border.all(color: Colors.green),
+                            (_addclick1 == false) ? Colors.white : const Color.fromRGBO(123, 172, 57, 100),
+                        border: Border.all(color: const Color.fromRGBO(123, 172, 57, 100)),
                         borderRadius: BorderRadius.circular(20)),
                     child: ElevatedButton(
                       onPressed: () {
@@ -255,7 +262,7 @@ class _calcSementeState extends State<CalcSementePage> {
                         style: TextStyle(
                           color: (_addclick1 == true)
                               ? Colors.white
-                              : Colors.green,
+                              : const Color.fromRGBO(123, 172, 57, 100),
                           fontSize: 25,
                         ),
                       ),
@@ -266,8 +273,8 @@ class _calcSementeState extends State<CalcSementePage> {
                     width: double.infinity,
                     decoration: BoxDecoration(
                         color:
-                            (_addclick2 == false) ? Colors.white : Colors.green,
-                        border: Border.all(color: Colors.green),
+                            (_addclick2 == false) ? Colors.white : const Color.fromRGBO(123, 172, 57, 100),
+                        border: Border.all(color: const Color.fromRGBO(123, 172, 57, 100)),
                         borderRadius: BorderRadius.circular(20)),
                     child: ElevatedButton(
                       onPressed: () {
@@ -301,7 +308,7 @@ class _calcSementeState extends State<CalcSementePage> {
                         style: TextStyle(
                           color: (_addclick2 == true)
                               ? Colors.white
-                              : Colors.green,
+                              : const Color.fromRGBO(123, 172, 57, 100),
                           fontSize: 25,
                         ),
                       ),
@@ -329,8 +336,8 @@ class _calcSementeState extends State<CalcSementePage> {
                     width: double.infinity,
                     decoration: BoxDecoration(
                         color:
-                            (_addclick3 == false) ? Colors.white : Colors.green,
-                        border: Border.all(color: Colors.green),
+                            (_addclick3 == false) ? Colors.white : const Color.fromRGBO(123, 172, 57, 100),
+                        border: Border.all(color: const Color.fromRGBO(123, 172, 57, 100)),
                         borderRadius: BorderRadius.circular(20)),
                     child: ElevatedButton(
                       onPressed: () {
@@ -364,7 +371,7 @@ class _calcSementeState extends State<CalcSementePage> {
                         style: TextStyle(
                           color: (_addclick3 == true)
                               ? Colors.white
-                              : Colors.green,
+                              : const Color.fromRGBO(123, 172, 57, 100),
                           fontSize: 25,
                         ),
                       ),
@@ -375,8 +382,8 @@ class _calcSementeState extends State<CalcSementePage> {
                     width: double.infinity,
                     decoration: BoxDecoration(
                         color:
-                            (_addclick4 == false) ? Colors.white : Colors.green,
-                        border: Border.all(color: Colors.green),
+                            (_addclick4 == false) ? Colors.white : const Color.fromRGBO(123, 172, 57, 100),
+                        border: Border.all(color: const Color.fromRGBO(123, 172, 57, 100)),
                         borderRadius: BorderRadius.circular(20)),
                     child: ElevatedButton(
                       onPressed: () {
@@ -410,7 +417,7 @@ class _calcSementeState extends State<CalcSementePage> {
                         style: TextStyle(
                           color: (_addclick4 == true)
                               ? Colors.white
-                              : Colors.green,
+                              : const Color.fromRGBO(123, 172, 57, 100),
                           fontSize: 25,
                         ),
                       ),
@@ -438,8 +445,8 @@ class _calcSementeState extends State<CalcSementePage> {
                     width: double.infinity,
                     decoration: BoxDecoration(
                         color:
-                            (_addclick5 == false) ? Colors.white : Colors.green,
-                        border: Border.all(color: Colors.green),
+                            (_addclick5 == false) ? Colors.white : const Color.fromRGBO(123, 172, 57, 100),
+                        border: Border.all(color: const Color.fromRGBO(123, 172, 57, 100)),
                         borderRadius: BorderRadius.circular(20)),
                     child: ElevatedButton(
                       onPressed: () {
@@ -473,7 +480,7 @@ class _calcSementeState extends State<CalcSementePage> {
                         style: TextStyle(
                           color: (_addclick5 == true)
                               ? Colors.white
-                              : Colors.green,
+                              : const Color.fromRGBO(123, 172, 57, 100),
                           fontSize: 25,
                         ),
                       ),
@@ -484,8 +491,8 @@ class _calcSementeState extends State<CalcSementePage> {
                     width: double.infinity,
                     decoration: BoxDecoration(
                         color:
-                            (_addclick6 == false) ? Colors.white : Colors.green,
-                        border: Border.all(color: Colors.green),
+                            (_addclick6 == false) ? Colors.white :const Color.fromRGBO(123, 172, 57, 100),
+                        border: Border.all(color: const Color.fromRGBO(123, 172, 57, 100)),
                         borderRadius: BorderRadius.circular(20)),
                     child: ElevatedButton(
                       onPressed: () {
@@ -519,7 +526,7 @@ class _calcSementeState extends State<CalcSementePage> {
                         style: TextStyle(
                           color: (_addclick6 == true)
                               ? Colors.white
-                              : Colors.green,
+                              : const Color.fromRGBO(123, 172, 57, 100),
                           fontSize: 25,
                         ),
                       ),
@@ -530,8 +537,8 @@ class _calcSementeState extends State<CalcSementePage> {
                     width: double.infinity,
                     decoration: BoxDecoration(
                         color:
-                            (_addclick7 == false) ? Colors.white : Colors.green,
-                        border: Border.all(color: Colors.green),
+                            (_addclick7 == false) ? Colors.white :const Color.fromRGBO(123, 172, 57, 100),
+                        border: Border.all(color: const Color.fromRGBO(123, 172, 57, 100)),
                         borderRadius: BorderRadius.circular(20)),
                     child: ElevatedButton(
                       onPressed: () {
@@ -565,7 +572,7 @@ class _calcSementeState extends State<CalcSementePage> {
                         style: TextStyle(
                           color: (_addclick7 == true)
                               ? Colors.white
-                              : Colors.green,
+                              : const Color.fromRGBO(123, 172, 57, 100),
                           fontSize: 25,
                         ),
                       ),
@@ -578,8 +585,8 @@ class _calcSementeState extends State<CalcSementePage> {
               Container(
                 width: double.infinity,
                 decoration: BoxDecoration(
-                    color: Colors.orange,
-                    border: Border.all(color: Colors.orange),
+                    color: const Color.fromRGBO(246, 164, 54, 34),
+                    border: Border.all(color: const Color.fromRGBO(246, 164, 54, 34)),
                     borderRadius: BorderRadius.circular(20)),
                 child: ElevatedButton(
                   onPressed: () {
@@ -607,8 +614,8 @@ class _calcSementeState extends State<CalcSementePage> {
               Container(
                 width: double.infinity,
                 decoration: BoxDecoration(
-                    color: Colors.orange,
-                    border: Border.all(color: Colors.orange),
+                    color: const Color.fromRGBO(246, 164, 54, 34),
+                    border: Border.all(color: const Color.fromRGBO(246, 164, 54, 34)),
                     borderRadius: BorderRadius.circular(20)),
                 child: ElevatedButton(
                   onPressed: () {
@@ -636,8 +643,8 @@ class _calcSementeState extends State<CalcSementePage> {
               Container(
                 width: double.infinity,
                 decoration: BoxDecoration(
-                    color: Colors.orange,
-                    border: Border.all(color: Colors.orange),
+                    color: const Color.fromRGBO(246, 164, 54, 34),
+                    border: Border.all(color: const Color.fromRGBO(246, 164, 54, 34)),
                     borderRadius: BorderRadius.circular(20)),
                 child: ElevatedButton(
                   onPressed: () {
@@ -665,8 +672,8 @@ class _calcSementeState extends State<CalcSementePage> {
               Container(
                 width: double.infinity,
                 decoration: BoxDecoration(
-                    color: Colors.orange,
-                    border: Border.all(color: Colors.orange),
+                    color: const Color.fromRGBO(246, 164, 54, 34),
+                    border: Border.all(color: const Color.fromRGBO(246, 164, 54, 34)),
                     borderRadius: BorderRadius.circular(20)),
                 child: ElevatedButton(
                   onPressed: () {
@@ -694,8 +701,8 @@ class _calcSementeState extends State<CalcSementePage> {
               Container(
                 width: double.infinity,
                 decoration: BoxDecoration(
-                    color: Colors.orange,
-                    border: Border.all(color: Colors.orange),
+                    color: const Color.fromRGBO(246, 164, 54, 34),
+                    border: Border.all(color: const Color.fromRGBO(246, 164, 54, 34)),
                     borderRadius: BorderRadius.circular(20)),
                 child: ElevatedButton(
                   onPressed: () {
@@ -723,8 +730,8 @@ class _calcSementeState extends State<CalcSementePage> {
               Container(
                 width: double.infinity,
                 decoration: BoxDecoration(
-                    color: Colors.orange,
-                    border: Border.all(color: Colors.orange),
+                    color: const Color.fromRGBO(246, 164, 54, 34),
+                    border: Border.all(color: const Color.fromRGBO(246, 164, 54, 34)),
                     borderRadius: BorderRadius.circular(20)),
                 child: ElevatedButton(
                   onPressed: () {
@@ -752,8 +759,8 @@ class _calcSementeState extends State<CalcSementePage> {
               Container(
                 width: double.infinity,
                 decoration: BoxDecoration(
-                    color: Colors.orange,
-                    border: Border.all(color: Colors.orange),
+                    color: const Color.fromRGBO(246, 164, 54, 34),
+                    border: Border.all(color: const Color.fromRGBO(246, 164, 54, 34)),
                     borderRadius: BorderRadius.circular(20)),
                 child: ElevatedButton(
                   onPressed: () {
@@ -781,58 +788,73 @@ class _calcSementeState extends State<CalcSementePage> {
               'Precisa de ajuda?',
               style: TextStyle(
                   fontSize: 30,
-                  color: Colors.black87,
+                  color: Colors.black54,
                   fontWeight: FontWeight.bold),
             ),
             SizedBox(height: 25),
-            Row(
-  mainAxisAlignment: MainAxisAlignment.start, // Alinha os elementos à direita
-  children: [
-    Container(
-      child: Row(
-        children: [
-          Image.network(
-            "https://logowik.com/content/uploads/images/flutter5786.jpg",
-            width: 50,
-            height: 50,
-          ),
-          SizedBox(width: 10), // espaço entre a imagem e o texto
-          Text(
-            'Veja instruções de semente.',
-            style: TextStyle(
-              fontSize: 23,
-              color: Colors.black54,
-              fontWeight: FontWeight.bold,
-            ),
-          ),
-        ],
-      ),
-    ),
-    SizedBox(width: 5),
-    InkWell(
-      onTap: () {
-        Navigator.push(
-          context,
-          MaterialPageRoute(builder: (context) => InstruSemetes()),
-        );
-      },
-      child: Container(
-        padding: EdgeInsets.all(12), // Ajuste o espaçamento interno conforme necessário
-        child: Icon(
-          Icons.arrow_forward,
-          color: Colors.green,
-          size: 30,
-        ),
-      ),
-    ),
-  ],
-),
+             Container(
+                    width: MediaQuery.of(context).size.width,
+                    child: Padding(
+                      padding: EdgeInsetsDirectional.fromSTEB(10, 20, 10, 20),
+                      child: Row(
+                      children: [
+                        Container(
+                          child: Row(
+                            children: [
+                              Image.asset(
+                                "assets/sprAtivo.png",
+                                width: 50,
+                                height: 50,
+                              ),
+                              SizedBox(
+                                width: 10,
+                              ),
+                              Text(
+                                'Veja instruções de semente.',
+                                style: TextStyle(
+                                  fontSize: 23,
+                                  color: const Color.fromRGBO(96, 96, 96, 100),
+                                  fontWeight: FontWeight.bold,
+                                  fontFamily: 'Schyler',
+                                ),
+                              ),
+                            ],
+                          ),
+                        ),
+                        Spacer(),
+                        InkWell(
+                          onTap: () {
+                            Navigator.push(
+                              context,
+                              MaterialPageRoute(builder: (context) => InstruSemetes()),
+                            );
+                          },
+                          child: Container(
+                            decoration: BoxDecoration(
+                              shape: BoxShape.rectangle,
+                              borderRadius: BorderRadius.circular(10), // Define o borderRadius desejado
+                              
+                              color: Colors.black26, // Define a cor de fundo desejada
+                            ),
+                            padding: EdgeInsets.all(12),
+                            child: Icon(
+                              Icons.arrow_forward,
+                              color: Colors.black54, // Define a cor do ícone
+                              size: 30,
+                            ),
+                          ),
+                        ),
+                      ],
+                                      ),
+                    ),
+                  ),
 
           ],
           
           
         ),
       ),
+      
     );
   }
 }

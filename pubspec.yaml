@@ -62,16 +62,19 @@ flutter:
   # included with your application, so that you can use the icons in
   # the material Icons class.
  uses-material-design: true
+ 
+
  assets:
-   - images/logo_dose_certa.png
-   - images/face.png
-   - 'images/email.png'
-   - 'images/folha2Ativo.png'
-   - 'images/insta.png'
-   - 'images/linkedin.png'
-   - 'images/site.png'
-   - 'images/telefone.png'
-   - images/wpp.png
+   - assets/logo_dose_certa.png
+   - assets/face.png
+   - 'assets/email.png'
+   - 'assets/folha2Ativo.png'
+   - 'assets/insta.png'
+   - 'assets/linkedin.png'
+   - 'assets/site.png'
+   - 'assets/telefone.png'
+   - assets/wpp.png
+   - assets/logo_Verde.png
   #   - images/a_dot_ham.jpeg
 
   # An image asset can refer to one or more resolution-specific "variants", see
@@ -87,22 +90,22 @@ flutter:
   # example:
   
 fonts:
-  - family: Branging
+  - family: Branding
     fonts:
-      - asset: fonts/BrandingBlack.otf
-      - asset: fonts/BrandingBlackItalic.otf
-      - asset: fonts/BrandingBold.otf
-      - asset: fonts/BrandingBoldItalic.otf
-      - asset: fonts/BrandingLight.otf
-      - asset: fonts/BrandingLightItalic.otf
-      - asset: fonts/BrandingMedium.otf
-      - asset: fonts/BrandingMediumItalic.otf
-      - asset: fonts/BrandingSemiBold.otf
-      - asset: fonts/BrandingSemiBoldItalic.otf
-      - asset: fonts/BrandingSemiLight.otf
-      - asset: fonts/BrandingSemiLightItalic.otf
-      - asset: fonts/BrandingThin.otf
-      - asset: fonts/BrandingThinItalic.otf
+      - asset: assets/fonts/BrandingBlack.otf
+      - asset: assets/fonts/BrandingBlackItalic.otf
+      - asset: assets/fonts/BrandingBold.otf
+      - asset: assets/fonts/BrandingBoldItalic.otf
+      - asset: assets/fonts/BrandingLight.otf
+      - asset: assets/fonts/BrandingLightItalic.otf
+      - asset: assets/fonts/BrandingMedium.otf
+      - asset: assets/fonts/BrandingMediumItalic.otf
+      - asset: assets/fonts/BrandingSemiBold.otf
+      - asset: assets/fonts/BrandingSemiBoldItalic.otf
+      - asset: assets/fonts/BrandingSemiLight.otf
+      - asset: assets/fonts/BrandingSemiLightItalic.otf
+      - asset: assets/fonts/BrandingThin.otf
+      - asset: assets/fonts/BrandingThinItalic.otf
 
   # For details regarding fonts from package dependencies,
   # see https://flutter.dev/custom-fonts/#from-packages

@@ -12,9 +12,9 @@ class calc_adubo2 extends StatefulWidget {
 }
 
 class _calc_adubo2State extends State<calc_adubo2> {
-  TextEditingController _seedsController = TextEditingController();
-  TextEditingController _lengthController = TextEditingController();
-  TextEditingController _widthController = TextEditingController();
+  TextEditingController _seedsController = TextEditingController(text:"10");
+  TextEditingController _lengthController = TextEditingController(text:"36");
+  TextEditingController _widthController = TextEditingController(text:"17");
   int _result = 0;
 
   void _calcular() {
@@ -58,11 +58,14 @@ class _calc_adubo2State extends State<calc_adubo2> {
               Navigator.pop(context);
             },
           ),
-        actions: [
-            Container(
-              width: 50,
-              child: Image.network(
-                  'https://logowik.com/content/uploads/images/flutter5786.jpg'),
+         actions: [
+            Padding(
+               padding: const EdgeInsets.only(left: 10,right: 20),
+              child: Container(
+                width: 50,
+                child: Image.asset(
+                    'assets/logo_Verde.png'),
+              ),
             )
           ],
       ),

@@ -12,9 +12,9 @@ class calc_semente1 extends StatefulWidget {
 }
 
 class _calc_semente1State extends State<calc_semente1> {
-  TextEditingController _seedsController = TextEditingController();
-  TextEditingController _lengthController = TextEditingController();
-  TextEditingController _widthController = TextEditingController();
+  TextEditingController _seedsController = TextEditingController(text:"13.6");
+  TextEditingController _lengthController = TextEditingController(text:"95");
+  TextEditingController _widthController = TextEditingController(text:"45");
   double _result = 0.0;
 
   void _calcular() {
@@ -42,7 +42,7 @@ class _calc_semente1State extends State<calc_semente1> {
           backgroundColor: const Color.fromARGB(255, 255, 255, 255),
           centerTitle: false,
           iconTheme: IconThemeData(
-            color: Colors.green,
+            color: const Color.fromRGBO(123, 172, 57, 100),
             size: 32,
           ),
           elevation: 0,
@@ -61,11 +61,14 @@ class _calc_semente1State extends State<calc_semente1> {
             },
           ),
           //Imagem do canto superior esquerdo
-          actions: [
-            Container(
-              width: 50,
-              child: Image.network(
-                  'https://logowik.com/content/uploads/images/flutter5786.jpg'),
+           actions: [
+            Padding(
+               padding: const EdgeInsets.only(left: 10,right: 20),
+              child: Container(
+                width: 50,
+                child: Image.asset(
+                    'assets/logo_Verde.png'),
+              ),
             )
           ],
         ),
@@ -92,7 +95,9 @@ class _calc_semente1State extends State<calc_semente1> {
                 padding: EdgeInsets.all(15), //apply padding to all four sides
                 child: Text("Potencial Germinativo"),
               ),
+              
               TextField(
+            
                 controller: _lengthController,
                 keyboardType: TextInputType.number,
                 decoration: InputDecoration(
@@ -137,7 +142,7 @@ class _calc_semente1State extends State<calc_semente1> {
                   style: ElevatedButton.styleFrom(
                       shadowColor: Colors.black,
                       elevation: 10.0,
-                      backgroundColor: Colors.orange,
+                      backgroundColor: const Color.fromRGBO(246, 164, 54, 34),
                       padding: EdgeInsets.symmetric(
                           horizontal: 20.0, vertical: 20.0),
                       shape: RoundedRectangleBorder(

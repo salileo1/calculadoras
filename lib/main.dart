@@ -1,13 +1,14 @@
 import 'package:flutter/material.dart';
 import 'package:teste_calculadora/instru_semetes.dart';
+import 'package:teste_calculadora/pages/calc_adubo.dart';
 import 'package:teste_calculadora/pages/calc_semente.dart';
 import 'geral_page.dart';
 import 'sobre_page.dart';
 import 'contato_page.dart';
-import 'check_page.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'firebase_options.dart';
+import 'package:google_fonts/google_fonts.dart';
 
 void main() async{
   WidgetsFlutterBinding.ensureInitialized();
@@ -22,10 +23,11 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       title: 'Meu Aplicativo',
-      theme: ThemeData(  
+       theme: ThemeData(
         primarySwatch: Colors.blue,
+        fontFamily: 'Branding',
       ),
-      home: const checkPage(),
+      home: HomePage(),
     );  
   }
 }
@@ -41,7 +43,6 @@ class _HomePageState extends State<HomePage> {
     GeralPage(),
     SobrePage(),
     ContatoPage(),
-    CalcSementePage(),
     InstruSemetes(),
   ];
 
@@ -58,6 +59,7 @@ class _HomePageState extends State<HomePage> {
       body: _widgetOptions.elementAt(_selectedIndex),
       bottomNavigationBar: BottomNavigationBar(
         fixedColor: const Color.fromRGBO(123, 172, 57, 100),
+        backgroundColor: Color.fromRGBO(255, 255, 255, 1),
         items: const <BottomNavigationBarItem>[
           BottomNavigationBarItem(
             

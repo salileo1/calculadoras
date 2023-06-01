@@ -25,7 +25,7 @@ class _LoginPageState extends State<LoginPage> {
         backgroundColor: const Color.fromARGB(255, 255, 255, 255),
         centerTitle: false,
         iconTheme: IconThemeData(
-          color: Colors.green,
+          color: const Color.fromARGB(255, 255, 255, 255),
           size: 32,
         ),
         elevation: 0,
@@ -37,20 +37,18 @@ class _LoginPageState extends State<LoginPage> {
             fontWeight: FontWeight.bold,
           ),
         ),
-        leading: IconButton(
-          icon: Icon(Icons.arrow_back),
-          onPressed: () {
-            Navigator.pop(context);
-          },
-        ),
+        
         //Imagem do canto superior esquerdo
-        actions: [
-          Container(
-            width: 50,
-            child: Image.network(
-                'https://logowik.com/content/uploads/images/flutter5786.jpg'),
-          )
-        ],
+         actions: [
+            Padding(
+               padding: const EdgeInsets.only(left: 10,right: 20),
+              child: Container(
+                width: 50,
+                child: Image.asset(
+                    'assets/logo_Verde.png'),
+              ),
+            )
+          ],
       ),
       body: Padding(
         padding: EdgeInsets.all(12),
